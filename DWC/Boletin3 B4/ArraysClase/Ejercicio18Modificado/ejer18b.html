@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var personas = [];
+        do{
+            var datos = prompt("Introduce nombre, apellidos, DNI y fecha de nacimiento (DD/MM/AAAA) separados por comas.");
+            datos = datos.split(", ");
+            if(datos!=""){
+                personas.push(datos);//Controlo que no entre el último input para que no haya un espacio vacío
+            }
+        }while(datos!="");
+
+        //Calcular edad a parrtir de la fecha
+        var cEdad=(fechaC)=>{/**/
+            var fechaCumple = fechaC.split("/");
+            var fechaC_date = new Date(fechaCumple[2], fechaCumple[1] - 1, fechaCumple[0]);
+            var ageDifMs = Date.now() - fechaC_date.getTime();
+            var ageDate = new Date(ageDifMs);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+        //Buscar por edad
+        var buscarPorEdad=(ed)=>{
+            var busqueda = "";
+            for(var i =0; i<personas.length; i++){
+                var edad = cEdad(personas[i][3]);
+                if(edad==ed){
+                busqueda = busqueda + "<br><br>Nombre: " + personas[i][0] + "<br>Apellidos: " 
+                    + personas[i][1] + "<br>DNI: " + personas[i][2] + "<br>Edad: " +cEdad(personas[i][3])
+                    +"<br>";
+                }
+            }
+            return busqueda;
+        }
+        //Filtrar mayores de edad
+        var mayorEdad=()=>{
+            var may = "";
+            for(var i = 111; i>=18; i--){
+                may = may + buscarPorEdad(i);
+            }
+            return(may);
+        }
+        //Filtrar menores de edad
+        var menorEdad=(arr)=>{
+            var may = [];
+            for(var i = 0; i<arr.length; i++){
+                if(cEdad(arr[i][3])<18){
+                    may.push(arr[i]);
+                }
+            }
+            return(may);//Crea un nuevo array con los menores
+        }
+        //Modificar datos
+        var modificaDatos= (dato, dni, nw)=>{
+            if(dato == "nombre"){
+                for(i=0; i<personas.length; i++){
+                    if(personas[i][2]==dni){
+                        personas[i][0] = nw;
+                    }
+                }
+            }else if(dato == "apellido"){
+                for(i=0; i<personas.length; i++){
+                    if(personas[i][2]==dni){
+                        personas[i][1] = nw;
+                    }
+                }
+            }else if(dato == "dni"){
+                for(i=0; i<personas.length; i++){
+                    if(personas[i][2]==dni){
+                        personas[i][2] = nw;
+                    }
+                }
+            }else if(dato == "fecha"){
+                for(i=0; i<personas.length; i++){
+                    if(personas[i][2]==dni){
+                        personas[i][3] = nw;
+                    }
+                }
+            }
+        }
+        //Mostrar el array
+        var mostrarTodos=(arr)=>{
+            var muestra = "";
+            for(var i =0; i<arr.length; i++){
+                muestra = muestra + "<br><br>Nombre: " + arr[i][0] + "<br>Apellidos: " 
+                    + arr[i][1] + "<br>DNI: " + arr[i][2] + "<br>Edad: " + cEdad(arr[i][3]);
+            }
+            return muestra;
+        }
+        //Eliminar un usuario, devuelve una array donde se excluye al usuario que se quiere eliminar
+        var eliminaUsuario=(arr, dni)=>{
+            var newArr = [];
+            for(i=0; i<arr.length; i++){ 
+                if(arr[i][2]!=dni){
+                    newArr.push(arr[i]);
+                }
+            }
+            arr = newArr;
+            return arr;            
+        }
+        //Mostrar en nueva ventana
+        function nuevaVentana (cadena){
+            var left = (screen.width/2)-(75+10);
+            var arriba = (screen.height/2)-(100-50);
+            var abrir = window.open('','Nueva',"width=200,height=200,left="+left+",top="+arriba+"'");         
+            abrir.document.write('<title>Datos</title>'+cadena);  
+        }
+    
+        var dieciocho = prompt("M para los mayores / N para los menores / O para modificar / B para borrar");
+        if(dieciocho=="M"){
+            var cad = mayorEdad();
+            nuevaVentana("Mayores de edad<hr>" + cad);
+        }else if(dieciocho=="N"){
+            var cad = (mostrarTodos(menorEdad(personas)));
+            nuevaVentana("Menores de edad<hr>" + cad);
+        }else if(dieciocho=="O"){
+            var dni = prompt("Introduce tu DNI");
+            var dato= prompt("Qué dato vas a modificar, elige: nombre/apellido/dni/fecha");
+            var nw = prompt("Introduce el nuevo dato");
+            modificaDatos(dato, dni, nw);
+            document.write(mostrarTodos(personas));
+        }else if(dieciocho=="B"){
+            var dni = prompt("Introduce tu DNI");
+            var confir = promt("Se va a eliminar el usuario con DNI: " + dni + ", ¿confirmas? si/no");
+            if(confir == "si"){
+                document.write(mostrarTodos(eliminaUsuario(personas, dni)));
+            }else if(confir == "no"){
+                document.write("No se ha borrado el usuario");
+                document.write(mostrarTodos(personas));
+            }
+        }else{
+            alert("ERROR");
+        }
+
+        
+        //Jose, Quintanilla Blanco, 12312323V, 29/07/1988
+        //Pedro, Juan Rodriguez, 65447877C, 12/01/1988
+        //Francisco, Blanco Rodriguez, 11223877C, 25/10/1991
+        //Juan Miguel, Perez Nuñez, 58965412Q, 21/02/2007
+        //Pepe, Ramallo Romero, 43378977C, 15/04/1970
+    </script>
+</body>
+</html>

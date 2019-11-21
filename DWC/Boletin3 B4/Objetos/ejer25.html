@@ -1,0 +1,96 @@
+<!--. Crear un objeto Alumno con su nombre, DNI, ... (objeto Persona), curso, notas de cada
+módulo, y nota media. Crear su constructor y un método para imprimir un Alumno.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Personas{
+            constructor(nombre, apellidos, dni, fecha){
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.dni = dni;
+                this.fecha = fecha;
+            }
+            
+            getNombre(){
+                return this.nombre;
+            }
+
+            getApellidos (){
+                return this.apellidos;
+            }
+
+            getDni(){
+                return this.dni;
+            }
+
+            getFecha(){
+                return this.fecha;
+            }
+        }
+
+        var persona1 = new Personas("Jose", "QB", "2000032B", "29/07/1988");
+
+        //alert(persona1.getNombre());
+        class Alumno extends Personas{
+            constructor(nombre, apellidos, dni, fecha, curso, notas){
+                super(nombre, apellidos, dni, fecha);
+                this.curso = curso;
+                this.notas = notas;
+            }
+
+            getNotas(){
+                return this.notas;
+            }
+            getMedia(){
+                var media = 0;
+                for (let i=0; i<this.notas.length; i++) {
+                    media = media + this.notas[i][1];
+                }
+                return media/3;
+            }
+            getAlumno(){
+                var infoAlumno = "<br>Nombre: " + this.nombre + "<br>Apellidos: " + this.apellidos + 
+                                 "<br>Curso: " + this.curso;
+                return infoAlumno;
+            
+            }
+            getNotas(){
+                var notas = "";
+                for(let i=0; i<this.notas.length; i++){
+                    notas = notas + this.notas[i][0] + ":" + this.notas[i][1] + "<br>";  
+                }
+                return notas;
+            }
+        }
+        class Aula {
+            constructor(alumno, aula){
+                this.alumno = alumno;
+                this.aula = aula;
+            }
+        }
+        var nota1 = [["dws", 3], ["dwc", 5], ["diw", 6]];
+        var nota2 = [["dws", 6], ["dwc", 9], ["diw", 2]];
+
+        var curso1 = "Segundo";
+        var persona1 = new Personas("Jose", "QB", "2000032B", "29/07/1988");
+        var alumno1 = new Alumno("Jose", "QB", "2000032B", "29/07/1988", curso1, nota1);
+        var alumno2 = new Alumno("Jwsa", "RD", "200123SS", "09/02/1984", curso1, nota2);
+        var arrAlumnos1 = [alumno1, alumno2];
+        document.write(alumno1.getAlumno() +  "<br>Media: " + alumno1.getMedia() +"<br>"+ alumno1.getNotas());
+        var aula1 = new Aula(arrAlumnos1, "123");
+        arrAlumnos1.forEach(e => {
+            document.write(e.getApellidos() + "<br>")
+        });
+    
+    </script>
+</body>
+</html>

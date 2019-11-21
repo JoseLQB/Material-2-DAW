@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="funciones.js"></script>
+</head>
+<body>
+    <script>
+
+        class Personas{
+            constructor(nombre, apellidos, dni, fecha){
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.dni = dni;
+                this.fecha = fecha;
+            
+                getNombre = ()=>{
+                    return this.nombre;
+                }
+
+                getApellidos = ()=>{
+                    return this.apellidos;
+                }
+
+                getDni = ()=>{
+                    return this.dni;
+                }
+
+                getFecha = ()=>{
+                    return this.fecha;
+                }
+            }
+        }
+
+
+        var personas =[];
+        do{
+            var datos = prompt("Introduce nombre, apellidos, DNI y fecha de nacimiento (DD/MM/AAAA) separados por comas (sin espacios).");
+            datos = datos.split(",");
+            var person = new Personas(datos[0], datos[1], datos[2], datos[3]);
+            if(datos!=""){
+                personas.push(person);//Controlo que no entre el último input para que no haya un espacio vacío
+            }
+            for(nombre in personas){
+                alert(nombre);
+            }
+        }while(datos!="");
+        
+        var buscar = prompt("Buscar por edad [E] /Buscar por apellido [A] /Buscar por DNI [D] /Filtrar mayores [M] / Filtrar menores [N] / Modificar [O] / Borrar [B]");
+        if(buscar == "A"){
+            var a = prompt("Introduce el apellido que quieras buscar");
+            document.write(buscarPorApellido(a));
+        }else if(buscar == "D"){
+            var b = prompt("Introduce el DNI que queras buscar");
+            document.write(buscarPorDni(b));
+        }else if(buscar == "E"){
+            var c = prompt("Introduce la edad que quieras buscar");
+            document.write(buscarPorEdad(c));
+        }else if(buscar=="M"){
+            var cad = mayorEdad();
+            nuevaVentana("Mayores de edad<hr>" + cad);
+        }else if(buscar=="N"){
+            var cad = (mostrarTodos(menorEdad(personas)));
+            nuevaVentana("Menores de edad<hr>" + cad);
+        }else if(buscar=="O"){
+            var dni = prompt("Introduce tu DNI");
+            var dato= prompt("Qué dato vas a modificar, elige: nombre/apellido/dni/fecha");
+            var nw = prompt("Introduce el nuevo dato");
+            modificaDatos(dato, dni, nw);
+            var cad = mostrarTodos(personas);
+            nuevaVentana("Datos<hr>" + cad);
+        }else if(buscar=="B"){
+            var dni = prompt("Introduce tu DNI");
+            var confir = promt("Se va a eliminar el usuario con DNI: " + dni + ", ¿confirmas? si/no");
+            if(confir == "si"){
+                var cad = mostrarTodos(eliminaUsuario(personas, dni));
+                nuevaVentana("Usuarios<hr>" + cad);
+            }else if(confir == "no"){
+                document.write("No se ha borrado el usuario: <br>" + mostrarTodos(personas));
+            }
+        }else{
+            alert("ERROR");
+        }
+
+        /*
+        Jose,Quintanilla Blanco,12312323V,29/07/1988
+        Pedro,Juan Rodriguez,65447877C,12/01/1988
+        Francisco,Blanco Rodriguez,11223877C,25/10/1991
+        Juan Miguel,Perez Nuñez,58965412Q,21/02/2007
+        Pepe,Ramallo Romero,43378977C,15/04/1970
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--1. Diseñar un algoritmo para escribir en pantalla los n primeros números naturales, sus
+cuadrados, sus cubos y la suma de todos ellos.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boletin2E1</title>
+</head>
+<body>
+	<script type="text/javascript">
+        var n = parseInt(prompt("cuantos quieres que te muestre"));
+        var suma = 0;
+        for(x=0; x<=n; x++){
+            document.write(x +" ");
+        }
+        document.write("<br>");
+        for(x=0; x<=n; x++){
+            document.write(Math.pow(x,2)+" ");
+        }
+        document.write("<br>");
+        for(x=0; x<=n; x++){
+            document.write(Math.pow(x,3)+" ");
+        }
+        document.write("<br>");
+        for(x=0; x<=n; x++){
+        suma = x+suma;  
+        }
+        document.write(suma);
+	</script>
+</body>
+</html>

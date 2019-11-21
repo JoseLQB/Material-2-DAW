@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var personas = [];
+        do{
+            var datos = prompt("Introduce nombre, apellidos, DNI y fecha de nacimiento (DD/MM/AAAA) separados por comas.");
+            datos = datos.split(", ");
+            if(datos!=""){
+                personas.push(datos);
+            }
+            personas.push(datos);
+        }while(datos!="");
+        
+        function cEdad(fechaC){/**/
+            var fechaCumple = fechaC.split("/");
+            var fechaC_date = new Date(fechaCumple[2], fechaCumple[1] - 1, fechaCumple[0]);
+            var ageDifMs = Date.now() - fechaC_date.getTime();
+            var ageDate = new Date(ageDifMs);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+        function mostrarTodos(){
+            var muestra = "";
+            for(var i =0; i<personas.length; i++){
+                busqueda = busqueda + "<br><br>Nombre: " + personas[i][0] + "<br>Apellidos: " 
+                    + personas[i][1] + "<br>DNI: " + personas[i][2] + "<br>Edad " + personas[i][3];
+            }
+            return muestra;
+        }
+
+        function buscarPorApellido(ap){
+            var busqueda = "";
+            for(var i =0; i<personas.length; i++){
+                if(personas[i][1]==ap){
+                    busqueda = busqueda + "<br><br>Nombre: " + personas[i][0] + "<br>Apellidos: " 
+                            + personas[i][1] + "<br>DNI: " + personas[i][2] + "<br>Edad " + personas[i][3];
+                }
+            }
+            return busqueda;
+        }
+        function buscarPorDni(dn){
+            var busqueda = "";
+            for(var i =0; i<personas.length; i++){
+                if(personas[i][2]==dn){
+                    busqueda = busqueda + "<br><br>Nombre: " + personas[i][0] + "<br>Apellidos: " 
+                        + personas[i][1] + "<br>DNI: " + personas[i][2] + "<br>Edad " + personas[i][3];
+                }
+            }
+            return busqueda;
+        }
+        function buscarPorEdad(ed){
+            var busqueda = "";
+            for(var i =0; i<personas.length; i++){
+                var edad = cEdad(personas[i][3]);
+                if(edad==ed){
+                busqueda = busqueda + "<br><br>Nombre: " + personas[i][0] + "<br>Apellidos: " 
+                    + personas[i][1] + "<br>DNI: " + personas[i][2] + "<br>Edad " + personas[i][3];
+                }
+            }
+            return busqueda;
+        }
+
+        var busqueda = prompt("Buscar por edad [E] Buscar por apellido [A] Buscar por DNI [D] ")
+        if(busqueda == "A"){
+            var a = prompt("Introduce el apellido que quieras buscar");
+            document.write(buscarPorApellido(a));
+        }else if(busqueda == "D"){
+            var b = prompt("Introduce el DNI que queras buscar");
+            document.write(buscarPorDni(b));
+        }else if(busqueda == "E"){
+            var c = prompt("Introduce la edad que quieras buscar");
+            document.write(buscarPorEdad(c));
+        }
+
+        //Jose, Quintanilla Blanco, 12312323V, 29/07/1988
+        //Pedro, Juan Rodriguez, 65447877C, 12/01/1988
+        //Francisco, Blanco Rodriguez, 11223877C, 25/10/1991
+        //Pepe, Ramallo Romero, 43378977C, 15/04/1970
+    </script>
+    <input type="button" value="">
+    
+</body>
+</html>

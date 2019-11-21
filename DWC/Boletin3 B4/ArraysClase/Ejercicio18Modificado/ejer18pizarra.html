@@ -1,0 +1,102 @@
+<!--Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y
+fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que
+el usuario introduzca la cadena vacía. El programa debe guardar los datos en arrays.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombres =[];
+        var apellidos =[];
+        var dni =[];
+        var fecha =[];//Edad
+        var fechaCompleta = [];
+        do{
+            var datos = prompt("Introduce nombre, apellidos, DNI y fecha de nacimiento (DD/MM/AAAA) separados por comas.");
+            datos = datos.split(", ");
+            nombres.push(datos[0]);
+            apellidos.push(datos[1]);
+            dni.push(datos[2]);
+            if(datos !=""){
+                fecha.push(edad(datos[3]));
+            }
+            fechaCompleta.push(datos[3]);
+        }while(datos!="");
+        function edad(fechaC){/**/
+            var fechaCumple = fechaC.split("/");
+            var fechaC_date = new Date(fechaCumple[2], fechaCumple[1] - 1, fechaCumple[0]);
+            var ageDifMs = Date.now() - fechaC_date.getTime();
+            var ageDate = new Date(ageDifMs);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+        //Filtrar > 18
+        
+        function mayorEdad(arr){
+            var mayor = arr.filter(arr => arr >=18);
+            return mayor;
+        }
+        function menorEdad(arr){
+            var menor = arr.filter(arr => arr <18);
+            return menor;
+        }
+        function cuantoQueda(fech){
+            fech = fech.split("/");
+            var fechaC_date = new Date(fech[2], fech[1] - 1, fech[0]).getTime();
+            var fechaMayor = new Date(2019+18, fech[1] - 1, fech[0]).getTime();
+            var cuantoFalta = fechaMayor - fechaC_date;
+            var diferencia = (cuantoFalta/(1000*60*60*24));
+            return diferencia;
+        }
+
+        var dieciocho = prompt("M para ver los mayores / N para ver los menores");
+        if(dieciocho == "M"){
+            var a = mayorEdad(fecha);
+            var cad = "<h2>Mayores de edad:</h2><hr>"
+            for(i=0; i<a.length; i++){
+                for(j=0; j<fecha.length; j++){
+                    if(a[i]==fecha[j]){
+                    cad = cad + "<br>Nombre: " + nombres[i] + "<br>Apellidos: " 
+                        + apellidos[i] + "<br>DNI: " + dni[i] + "<br>Edad " + fecha[i];
+                    }
+                }
+            }
+            var left = (screen.width/2)-(75+10);
+            var arriba = (screen.height/2)-(100-50);
+        
+            var abrir = window.open('','Nueva',"width=200,height=200,left="+left+",top="+arriba+"'");         
+            abrir.document.write('<title>Alias</title>'+cad);
+
+        }else if(dieciocho == "N"){
+            var a = menorEdad(fecha);
+            var cad = "<h2>Menores de edad:</h2><hr>"
+            for(i=0; i<a.length; i++){
+                for(j=0; j<fecha.length; j++){
+                    if(a[i]==fecha[j]){
+                    cad = cad + "<br>Nombre: " + nombres[i] + "<br>Apellidos: " 
+                        + apellidos[i] + "<br>DNI: " + dni[i] + "<br>Edad " + fecha[i] 
+                        + "<br><hr>Faltan " + cuantoQueda(fechaCompleta[i]);
+                    }
+                }
+            }
+            nuevaVentana(cad);     
+        }
+        function nuevaVentana (cadena){
+            var left = (screen.width/2)-(75+10);
+            var arriba = (screen.height/2)-(100-50);
+            var abrir = window.open('','Nueva',"width=200,height=200,left="+left+",top="+arriba+"'");         
+            abrir.document.write('<title>Datos</title>'+cadena);  
+        }
+
+
+
+        //Jose, Quintanilla Blanco, 12312323V, 29/07/1988
+        //Pedro, Juan Rodriguez, 65447877C, 12/01/1988
+        //Francisco, Blanco Rodriguez, 11223877C, 25/10/1991
+        //Pepe, Ramallo Romero, 43378977C, 15/04/1970
+
+    </script>
+</body>
+</html>

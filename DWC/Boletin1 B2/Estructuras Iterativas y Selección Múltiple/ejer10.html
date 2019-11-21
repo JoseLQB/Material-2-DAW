@@ -1,0 +1,21 @@
+<!--10. Diseñar un programa que lea de teclado un número entero positivo en base 10 y escriba
+su correspondiente representación binaria usando la técnica de divisiones sucesivas.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>35
+        var numero = parseInt(prompt("Número:"));
+        var binario="";
+
+        while(numero>0){
+            binario = (numero%2 + binario).toString();
+            numero = Math.trunc(numero/2);
+        }
+        document.write(binario);
+    </script>
+</body>
+</html>

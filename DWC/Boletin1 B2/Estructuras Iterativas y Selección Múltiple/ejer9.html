@@ -1,0 +1,22 @@
+<!--Diseñar un programa que, dada una cierta cantidad de dinero que se leerá desde la
+entrada estándar, calcule cuál es el número mínimo de monedas de curso legal que
+equivalen a dicha cantidad de dinero.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dinero =parseInt(prompt("Introduce una cantidad de dinero"));
+        var monedas = 0;
+        if(dinero>0){
+            monedas = dinero*100;
+        }else{
+            alert("Introduce un valor correcto");
+        }
+        document.write(dinero + " euros son " + monedas + " monedas de 1 céntimo");
+    </script>
+</body>
+</html>

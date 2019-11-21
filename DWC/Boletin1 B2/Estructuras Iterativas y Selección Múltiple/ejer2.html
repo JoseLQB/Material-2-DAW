@@ -1,0 +1,33 @@
+<!--2. Hallar el menor, el mayor y la media de un conjunto de números positivos leídos de
+teclado.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boletin2E1</title>
+    <meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+        var nums=parseInt(prompt("Dame números, pulsa 0 para terminar"));
+        var mayor=nums;
+        var menor=nums;
+        var media=0;
+        var suma=0;
+        var cont=0;
+        while(nums!=0){
+            //media
+            suma = suma + nums;
+            cont++;
+            if(nums>mayor){
+                mayor = nums;
+            }else if(nums<mayor){
+                menor=nums;
+            }
+            var nums=parseInt(prompt("Dame números, pulsa 0 para terminar"));
+        }
+        document.write("<h2>El menor es: " + menor + "<br></h2>");
+        document.write("<h2>El mayor es: " + mayor + "<br></2>");
+        document.write("<h2>La media es: " + suma/cont + "<br></2>");
+	</script>
+</body>
+</html>

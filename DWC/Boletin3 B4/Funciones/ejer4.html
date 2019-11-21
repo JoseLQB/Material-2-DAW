@@ -1,0 +1,24 @@
+<!--Realizar una función que pase una cantidad de Mbyte, Kbytes y bytes a bytes.
+Probadla en una página.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function aBytes(mb, kb, b){
+            var bytes = 0;
+            bytes = bytes + parseInt(mb)*1048576;
+            bytes = bytes + parseInt(kb)*1024;
+            bytes = bytes + parseInt(b);
+            return bytes;
+        }
+        var pasarMb = prompt("Introduce mb");
+        var pasarKb = prompt("Introduce kb");
+        var pasarB = prompt("Introduce b");
+        document.write(aBytes(pasarMb, pasarKb, pasarB));
+    </script>
+</body>
+</html>

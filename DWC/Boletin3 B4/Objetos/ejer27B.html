@@ -1,0 +1,132 @@
+<!--Usando una implementación de objetos para guardar la sesión de calificación de un piloto como la siguiente: 
+function SesionCalificacion (){ 
+this.piloto; // Objeto piloto, contendrá su nombre y escudería. 
+this.tiempo; // Contendrá los ms de la mejor vuelta 
+} 
+
+Y teniendo un array de sesiones de calificación, usando sort(); escribir el código 
+necesario para ordenar el array de calificación por: 
+A. Tiempos. 
+B. Nombre de piloto. 
+
+Añade una función para añadir al array una sesión de calificación nueva en caso de que no exista, y otra para 
+eliminar del array (hay que comprobar que existe).
+Crea un archivo para la clase Piloto y otro para la clase SesionCalificacion.
+NOTA: Es aconsejable programar un generador de sesiones y un método de imprimir sesiones para 
+probar que las ordenaciones se realizan correctamente. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    class Piloto{
+        constructor(nombre, escuderia){
+            this.nombre = nombre;
+            this.escuderia = escuderia;
+        }
+    }
+    class Clasificacion{
+        constructor(Piloto, tiempo){
+            this.piloto = Piloto;
+            this.tiempo =  tiempo;
+        }
+        getTiempo = ()=>{
+            return this.tiempo;
+        }
+        getNombre = ()=>{
+            return this.piloto.nombre;
+        }
+        getEscuderia = ()=>{
+            return this.piloto.escuderia;
+        }
+    }
+    
+    var piloto1 = new Piloto("Zernando", "Renault");
+    var piloto2 = new Piloto("Michael", "Ferrari");
+    var piloto3 = new Piloto("Hamilton", "BMW");
+    var piloto4 = new Piloto("Pepito", "Ferrari");
+    var clasif = new Clasificacion(piloto2, 234);
+    var clasif2 = new Clasificacion(piloto1, 101);
+    var clasif3 = new Clasificacion(piloto3, 120);
+    var clasif4 = new Clasificacion(piloto3, 101);
+    var clasif5 = new Clasificacion(piloto4, 203);
+
+    var arrayClasif = [];
+
+    function nuevaSesion1(clasificacion, arr){
+        arr.push(clasificacion);
+    }
+    function nuevaSesion(clasificacion, arr){
+        t=true;
+        arr.forEach(key => {           
+            if(key.getNombre() == clasificacion.getNombre()){ 
+                t = false;
+            }    
+        });
+        if(t==true){
+            arr.push(clasificacion);
+        }
+        
+        return arr;  
+    }
+    function borrar(nombre, arr){
+        var c = -1;
+        for (const key of arr) {
+            c++;
+            if(nombre == key.getNombre()){
+                arr.splice(c, 1);
+            }
+        };
+    }
+   
+    nuevaSesion(clasif, arrayClasif);
+    nuevaSesion(clasif2, arrayClasif);
+    nuevaSesion(clasif3, arrayClasif);
+    nuevaSesion(clasif4, arrayClasif);
+    nuevaSesion(clasif5, arrayClasif);
+    borrar("Michael", arrayClasif);
+
+
+    function orderTiempo(a, b){
+        return a.tiempo-b.tiempo;
+    }
+
+    function orderNombre( a, b ) {
+        if (a.getNombre() < b.getNombre() ){
+            return -1;
+        }
+        if (a.getNombre() > b.getNombre()){
+            return 1;
+        }
+        return 0;
+    }
+
+    function orderPorlosdos(a,b){
+        if(a.getTiempo() != b.getTiempo()){
+            return a.getTiempo()-b.getTiempo();
+        }else{
+            if (a.getNombre() < b.getNombre() ){
+                return -1;
+            }
+            if (a.getNombre() > b.getNombre()){
+                return 1;
+            }
+        return 0;
+        }
+    }
+    arrayClasif.sort(orderPorlosdos);
+
+    var c = 1;
+    for (const i of arrayClasif) {
+        document.write("<br><br>Piloto " + c + "<hr>" + "Nombre:" +  i.getNombre() + "<br>Escudería: " + i.getEscuderia() + "<br>Tiempo: " + i.tiempo);
+        c++;
+    }
+    </script>
+</body>
+</html>

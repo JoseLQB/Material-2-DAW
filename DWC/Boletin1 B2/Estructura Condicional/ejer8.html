@@ -1,0 +1,36 @@
+<!--Realizar un programa que calcule las soluciones de una ecuación de segundo grado. Se
+debe contemplar que a veces no tiene solución y notificarlo al usuario.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boletin2E8</title>
+	<meta charset="utf-8">
+</head>
+<body>
+        <script type="text/javascript">
+
+                var a = parseInt(prompt("Escribe a"));
+                var b = parseInt(prompt("Escribe b"));
+                var c = parseInt(prompt("Escribe c"));
+
+                var sqr = Math.pow(b,2-(4*a*c));
+
+                if(sqr <=0){
+                        document.write("ERROR, no tiene solución");
+                }else if(b==0){
+                        Math.pow(a,2)+b
+                }
+                
+                var sol1 = (-b+Math.sqrt(sqr))/
+                2*a;
+                var sol2 = (-b-Math.sqrt(sqr))/
+                2*a;
+
+                document.write("<p>Solución 1: " + sol1 + "</p>");
+                document.write("<p>Solución 2: " + sol2 + "</p>");
+
+        </script>
+
+</body>
+</html>

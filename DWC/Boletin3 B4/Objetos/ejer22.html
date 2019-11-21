@@ -1,0 +1,47 @@
+<!--Crear un objeto Punto con dos coordenadas (x,y) y 
+un método para averiguar el cuadrante en el que está.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function cuadrante(x, y){
+            if(x<0 && y>0){
+                return "Primer cuadrantte";
+            }else if(x>0 && y>0){
+                return "Segundo cuadrante";
+            }else if(x<0 && y<0){
+                return "Tercer cuadrante";
+            }else if(x>0 && y<0){
+                return "Cuarto cuadrante";
+            }
+        }
+        /*function Punto(x, y){
+            this.x=x;
+            this.y=y;
+            this.cuadrante = cuadrante(x, y);
+
+        }*/
+
+
+
+        class Punto{
+            constructor(x, y){
+                this.x=x;
+                this.y=y;
+                this.cuadrante = cuadrante(x, y);
+
+            }
+        }
+        
+        var punto1 = new Punto(3, 4);
+        alert(punto1.cuadrante);
+        
+    </script>
+</body>
+</html>

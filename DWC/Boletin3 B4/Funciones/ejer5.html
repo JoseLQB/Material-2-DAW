@@ -1,0 +1,35 @@
+<!--Hacer un programa para generar el siguiente primo a uno dado. Deben usarse
+funciones.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //El mismo que hice en PHP
+        function esPrimo(nume){
+            var div=0;
+            for(var i=2; i<=nume;i++){
+                if(nume%i==0){
+                    if(++div>1){
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        function siguientePrimo (nume){
+            for(var j = nume+1; j<100000; j++){
+                if(esPrimo(j)==true){
+                    return j;
+                }
+            }
+        }
+        var numero = parseInt(prompt("introduce numero"));
+        document.write(siguientePrimo(numero));
+    </script>
+    
+</body>
+</html>

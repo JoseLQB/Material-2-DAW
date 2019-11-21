@@ -1,0 +1,37 @@
+<!-- 
+Diseñar un algoritmo que tomando las coordenadas cartesianas de un punto en el plano
+y calcule e imprima el cuadrante al que pertenece dicho punto. También debe detectar
+cuando está en el origen o sobre un eje.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boletin2E7</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">
+
+    var x = parseInt(prompt("Eje x"));
+    var y = parseInt(prompt("Eje y"));
+
+    if(y>0 && x<0){
+        document.write("Está en el primer cuadrante");
+    }else if(y>0 && x>0){
+        document.write("Está en el segundo cuadrante");   
+    }else if(y<0 & x<0){
+        document.write("Está en el tercer cuadrante");
+    }else if(y<0 & x>0){
+        document.write("Está en el tercer cuadrante");
+    }else if(y == 0 && x == 0){
+        document.write("Está en el origen");
+    }else if(y == 0){
+        document.write("Está sobre el eje x");
+    }else if(x == 0){
+        document.write("Está sobre el eje y");
+    }	
+	</script>
+
+</body>
+</html>

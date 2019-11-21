@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boletin2E4</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	
+	var hora = parseInt(prompt("Escribe la hora"));
+    var minutos = parseInt(prompt("Escribe los minutos"));
+    
+if(hora>=0 && hora <24){
+	if(hora>=7 && hora <=14){
+        if (hora == 7 && minutos<30){
+			document.write("Buenas noches");
+		}else{
+            document.write("Buenos días");
+		}
+	}else if(hora>14 && hora<=20){
+		if(hora ==20 && minutos<30){
+			document.write("Buenas tardes");
+		}else{
+			document.write("Buenas noches");
+		}
+	}else{
+		document.write("Buenas noches");
+    }
+}else{
+    document.write("No has introducido una hora correcta");
+}
+    
+</script>
+</body>
+</html>

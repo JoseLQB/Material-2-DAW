@@ -1,0 +1,68 @@
+<!--4. Realizar un programa que proporcione el cambio de Euros a Dólares, Libras, Yenes,
+Franco Suizo, Corona Noruega, según opción. El programa debe controlar todas las
+entradas y ofrecer al usuario la posibilidad de repetir o salir.
+dolar = 1.09
+libra = 0.89
+yen = 118.12
+franco = 1.08
+corona = 9.93
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boletin2E1</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">
+      /*  do{
+            var euro = parseInt(prompt("¿Introduce una cantidad en euros"));
+            var conver = prompt("[d] Para convertir a dolares / [l] Para convertir a libras / [y] Para convertir a yen / [f] Para convertir a francos / [c] para convertir a corona");
+                if(conver =="d"){
+                    euro = euro*1.09;
+                    alert(euro);
+                }else if(conver == "l"){
+                    euro = euro*0.89;
+                    alert(euro);
+                }else if(conver == "y"){
+                    euro = euro*118.12;
+                    alert(euro);
+                }else if(conver == "f"){
+                    euro = euro*1.08;
+                    alert(euro);
+                }else if(conver == "c"){
+                    euros = euro*9.93;
+                    alert(euro);
+                }else{
+                    alert("Error");
+                }
+                var sn = prompt("¿Quieres realizar otro cambio [s]|[n] ?");
+        }while(sn == "s");*/
+        var euro = parseInt(prompt("Introduce la cantidad en Euros"));
+        var conver = prompt("Pulsa: d para pasar a dólares, l para pasar a libras, y para pasar a yen, f para pasar a franco y c para coronas.");
+
+        switch (conver) {
+            case "d":
+                euro = euro*1.09;
+                alert(euro);  
+                break;
+            case "l":
+                euro = euro*0.89;
+                alert(euro);
+                break;
+            case "y":
+                euro = euro*118.12;
+                alert(euro);
+                break;
+            case "f":
+                euro = euro*1.08;
+                alert(euro);
+                break;
+            case "c":
+                euro = euro*9.93;
+                alert(euro);
+                break;
+            }
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!--Diseñar un programa que compruebe si un texto contiene sólo caracteres de
+nuestro alfabeto. Deberá implementarse una función esAlfabetoEspaniol(texto) que
+devuelva true si lo es.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esAlfabetoEspaniol(texto){
+            var reg = /^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$/gm;
+            if(reg.test(texto)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        var text = prompt("Introduce texto");
+        document.write(esAlfabetoEspaniol(text));
+    </script>
+    
+</body>
+</html>

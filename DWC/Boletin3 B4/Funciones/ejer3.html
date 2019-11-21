@@ -1,0 +1,24 @@
+<!--Realizar un programa que calcule el número de cifras de un número. Deberá
+implementarse una función numCifras(numero) que devuelva el número de cifras del
+mismo.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function numCifras (nume){
+            nume.split("");
+            var cifras = 0;
+            for(var i =0; i<=nume.length; i++){
+                cifras=+i;
+            }
+            return cifras;
+        }
+        var numero = prompt("Introduce un número");
+        document.write(numCifras(numero));
+    </script>
+</body>
+</html>

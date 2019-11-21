@@ -1,0 +1,46 @@
+<!--13. Escribe un algoritmo que lea desde la entrada estándar dos fechas dadas por día, mes
+y año y calcule cuál de ellas es anterior a la otra.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dia1 = parseInt(prompt("Día de la primera fecha"));
+        var mes1 = parseInt(prompt("Mes de la primera fecha"));
+        var año1 = parseInt(prompt("Año de la primera fecha"));        
+        
+        var dia2 = parseInt(prompt("Día de la segunda fecha"));
+        var mes2 = parseInt(prompt("Mes de la segunda fecha"));
+        var año2 = parseInt(prompt("Año de la segunda fecha"));
+
+        if(año1!=año2){
+            if(año1>año2){
+                document.write("La segunda fecha es anterior a la primera");
+            }else{
+                document.write("La primera fecha es anterior a la segunda");
+            }
+        }else if(mes1!=mes2){
+            if(mes1>mes2){
+                document.write("La segunda fecha es anterior a la primera");
+            }else{
+                document.write("La primera fecha es anterior a la segunda");
+            }
+            
+        }else if(dia1!=dia2){
+            if(dia1>dia2){
+                document.write("La segunda fecha es anterior a la primera");
+            }else{
+                document.write("La primera fecha es anterior a la segunda");
+            }
+        }
+    
+
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!--Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y
+fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que
+el usuario introduzca la cadena vacía. El programa debe guardar los datos en arrays.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nombres =[];
+        var apellidos =[];
+        var dni =[];
+        var fecha =[];
+        do{
+            var datos = prompt("Introduce nombre, apellidos, DNI y fecha de nacimiento (DD/MM/AAAA) separados por comas.");
+            datos = datos.split(", ");
+            nombres.push(datos[0]);
+            apellidos.push(datos[1]);
+            dni.push(datos[2]);
+            if(datos !=""){
+                fecha.push(edad(datos[3]));
+            }
+        }while(datos!="");
+        
+        
+
+        function edad(fechaC){/**/
+            var fechaCumple = fechaC.split("/");
+            var fechaC_date = new Date(fechaCumple[2], fechaCumple[1] - 1, fechaCumple[0]);
+            var ageDifMs = Date.now() - fechaC_date.getTime();
+            var ageDate = new Date(ageDifMs);
+            return Math.abs(ageDate.getUTCFullYear() - 1970);
+        }
+
+        var busqueda = prompt("Buscar por edad [E] Buscar por apellido [A] Buscar por DNI [D] ")
+
+        if(busqueda == "A"){
+        //Busca persona por apellido
+            var a = prompt("Introduce el apellido que quieras buscar");
+            function buscarPorApellido(ap){
+                var busqueda = "";
+                for(var i =0; i<apellidos.length; i++){
+                    if(apellidos[i]==ap){
+                        busqueda = busqueda + "<br><br>Nombre: " + nombres[i] + "<br>Apellidos: " 
+                                + apellidos[i] + "<br>DNI: " + dni[i] + "<br>Edad " + fecha[i];
+                    }
+                }
+                return busqueda;
+            }
+        document.write(buscarPorApellido(a));
+
+        }else if(busqueda == "D"){
+        //Busca persona por dni
+            var b = prompt("Introduce el DNI que quieras buscar");
+            function buscarPorDni(dn){
+                var busqueda = "";
+                for(var i =0; i<dni.length; i++){
+                    if(dni[i]==dn){
+                        busqueda = busqueda +"<br><br>Nombre: " + nombres[i] + "<br>Apellidos: " 
+                                + apellidos[i] + "<br>DNI: " + dni[i] + "<br>Edad " + fecha[i];
+                    }
+                }
+                return busqueda;
+            }
+        document.write(buscarPorDni(b));
+        
+        }else if(busqueda == "E"){
+        //Busca persona por Edad
+            var c = prompt("Introduce la edad que quieras buscar");
+            function buscarPorEdad(ed){
+                var busqueda = "";
+                for(var i =0; i<fecha.length; i++){
+                var edad = fecha[i];
+                    if(edad==ed){
+                        busqueda = busqueda + "<br><br>Nombre: " + nombres[i] + "<br>Apellidos: " 
+                                + apellidos[i] + "<br>DNI: " + dni[i] + "<br>Edad " + fecha[i];
+                    }
+                }
+                return busqueda;
+            }
+            document.write(buscarPorEdad(c));
+        }
+
+        //Jose, Quintanilla Blanco, 12312323V, 29/07/1988
+        //Pedro, Juan Rodriguez, 65447877C, 12/01/1988
+        //Francisco, Blanco Rodriguez, 11223877C, 25/10/1991
+        //Pepe, Ramallo Romero, 43378977C, 15/04/1970
+
+
+    </script>
+</body>
+</html>

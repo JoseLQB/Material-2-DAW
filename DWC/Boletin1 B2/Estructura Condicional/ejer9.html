@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Boletin2E8</title>
+	<meta charset="utf-8">
+</head>
+<body>
+        <script type="text/javascript">
+            var precio = prompt("¿Cuánto vale lo que quieres comprar?");
+            var pago = prompt("¿Con cuánto dinero vas a pagar?");
+            var euros = 0;
+            var resto = 0;
+            var e500, e200, e100, e50, e10, e5;
+            var em2, em1;
+            var ec50, ec20, ec10, ec5, ec2, ec1;
+            
+            if(precio>pago){
+                document.write("No puedes pagar, ahorra");
+            }else if(precio == pago){
+                document.write("Has pagado lo justo");
+            }else{
+                euros = pago-precio;
+                document.write(euros + "<br>");
+            }
+
+            if(euros>500){
+                resto = euros%500;
+                e500 = (euros - resto)/500;
+                document.write("Recibes " + e500 + " billetes de 500<br>");
+                euros = resto;
+            }
+            if(euros>200){
+                resto = euros%200;
+                e200 = (euros-resto)/200;
+                document.write("Recibes " + e200 + " billetes de 200 euros<br>");
+                euros = resto;
+            }
+            if(euros>100){
+                resto = euros%100;
+                e100 = (euros-resto)/100;
+                document.write("Recibes " + e100 + " billetes de 100 euros<br>");
+                euros = resto;
+            }
+            if(euros>50){
+                resto = euros%50;
+                e50 = (euros-resto)/50;
+                document.write("Recibes " + e50 + " billetes de 50 euros<br>");
+                euros = resto;
+            }
+            if(euros>10){
+                resto = euros%10;
+                e10 = (euros-resto)/10;
+                document.write("Recibes " + e10 + " billetes de 10 euros<br>");
+                euros = resto;
+            }
+            if(euros>5){
+                resto = euros%5;
+                e5 = (euros-resto)/5;
+                document.write("Recibes " + e5 + " billetes de 5 euros<br>");
+                euros = resto;
+            }
+            if(euros>2){
+                resto = euros%2;
+                em2 = (euros-resto)/2;
+                document.write("Recibes " + em2 + " monedas de 2 euros<br>");
+                euros = resto;
+            }
+            if(euros>1){
+                resto = euros%1;
+                em1 = (euros-resto)/1;
+                document.write("Recibes " + em1 + " monedas de 1 euros<br>");
+                euros = resto;
+            }
+            if(euros>0.5){
+                resto = euros%0.5;
+                ec50 = (euros-resto)/0.5;
+                document.write("Recibes " + ec50 + " monedas de 50 céntimos<br>");
+                euros = resto;
+            }
+            if(euros>0.2){
+                resto = euros%0.2;
+                ec20 = (euros-resto)/0.2;
+                document.write("Recibes " + ec20 + " monedas de 20 céntimos<br>");
+                euros = resto;
+            }
+            if(euros>0.1){
+                resto = euros%0.1;
+                ec10 = (euros-resto)/0.1;
+                document.write("Recibes " + ec10 + " monedas de 10 céntimos<br>");
+                euros = resto;
+            }
+            if(euros>0.05){
+                resto = euros%0.05;
+                ec5= (euros-resto)/0.05;
+                document.write("Recibes " + ec5 + " monedas de 5 céntimos<br>");
+                euros = resto;
+            }
+            if(euros>0.01){
+                resto = euros%0.01;
+                ec1=(euros-resto)/0.01;
+                document.write("Recibes " + ec1 + " monedas de 1 céntimos<br>");
+            }
+             
+        </script>
+
+</body>
+</html>

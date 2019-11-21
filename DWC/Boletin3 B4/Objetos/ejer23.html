@@ -1,0 +1,36 @@
+<!--Crear un objeto Rectángulo con un constructor a partir de dos objetos 
+Punto, con métodos para hallar el perímetro del mismo y su área. Añade 
+también dos métodos para calcular la base y la altura del rectángulo a partir 
+de los puntos.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Punto{
+            constructor(x, y){
+                this.x=x;
+                this.y=y;
+            }
+        }
+        class Rectangulo{
+            constructor(puntoI,puntoF){
+                this.puntoI = puntoI;
+                this.puntoF = puntoF;
+
+                this.base = puntoF.x-puntoI.x;
+                this.altura = puntoF.y-puntoI.y;
+            }
+        }
+        
+        var punto1 = new Punto(3, 5);
+        var punto2 = new Punto(9, 2);
+        var rect = new Rectangulo(punto1, punto2);
+        alert(Rectangulo.base)
+    </script>
+    
+</body>
+</html>

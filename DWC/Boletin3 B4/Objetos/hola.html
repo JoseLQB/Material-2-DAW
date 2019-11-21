@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = "abcd";
+        var b = "ab";
+
+        var a = a.split("");
+        var b = b.split("");
+        for(var i = 0; i<a.length; i++){
+            if(i==b.length){
+                b.push(" ");
+            }
+        }
+        console.log(b);
+    </script>
+</body>
+</html>
