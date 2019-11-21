@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Personas{
+            constructor(nombre, edad){
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+            getNombre(){
+                return this.nombre;
+            }
+            getEdad(){
+                return this.edad;
+            }
+        }
+        class Profesores extends Personas{
+            constructor(nombre, edad, asignatura, cursos){
+                super(nombre, edad);
+                this.asignatura = asignatura;
+                this.cursos = cursos;
+            }
+            getAsignatura(){
+                return this.asignatura;
+            }
+            getCursos(){
+                var c = "";
+                for(var i = 0; i<this.cursos.length; i++){
+                    c = c + this.cursos[i] + "<br>";
+                }
+                return c;
+            }
+        }
+
+        class Alumnos extends Personas{
+            constructor(nombre, edad, año, modalidad){
+                super(nombre, edad);
+                this.año = año;
+                this.modalidad = modalidad;
+            }
+            getAño(){
+                return this.año;
+            }
+            getModalidad(){
+                return this.modalidad;
+            }
+        }
+
+        /*var arrPersonas = [];
+        var c = 0;
+        while(datos !=0){
+            var datos = prompt("Introduce nombre y edad separados por una coma. 0 para salir");
+            if(datos!=0){
+            datos = datos.split(",");
+            var person = new Personas(datos[0], datos[1]);
+            arrPersonas.push(person);
+            c++;
+            }
+        };*/
+        
+
+        //Edades de todos:
+        for(var i = 0; i<arrPersonas.length; i++){
+            document.write(arrPersonas[i].getEdad() + "<br>");
+        }
+
+        //Edades y nombres de todos
+        for(var i = 0; i<arrPersonas.length; i++){
+            document.write("<br>Nombre: " + arrPersonas[i].getNombre() + " - Edad: " + arrPersonas[i].getEdad());
+        }
+
+        //Menores de edad
+        var menorEdad=(arr)=>{
+        var may = [];
+        for(var i = 0; i<arr.length; i++){
+            if((arr[i].getEdad())<18){//Cambiar el indice dependiendo del que contenga la edad
+                may.push(arr[i]);
+            }
+        }
+        return(may);//Crea un nuevo array con los menores
+        }
+        var a = menorEdad(arrPersonas);
+        for(var i = 0; i<a.length; i++){
+            document.write("<br>Nombre: " + a[i].getNombre() + " - Edad: " + a[i].getEdad());
+        }
+
+        //Mayores de edad
+        var mayorEdad=(arr)=>{
+        var may = [];
+        for(var i = 0; i<arr.length; i++){
+            if((arr[i].getEdad())>=18){
+                may.push(arr[i]);
+            }
+        }
+        return(may);//Crea un nuevo array con los menores
+        }
+        var b = mayorEdad(arrPersonas);
+        for(var i = 0; i<b.length; i++){
+            document.write("<br>Nombre: " + b[i].getNombre() + " - Edad: " + b[i].getEdad());
+        }
+
+
+
+    </script>
+</body>
+</html>

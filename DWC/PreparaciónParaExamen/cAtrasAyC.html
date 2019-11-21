@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+        function nuevaVentana (cadena){
+            var left = (screen.width/2)-(75+10);
+            var arriba = (screen.height/2)-(100-50);
+            var abrir = window.open('','Nueva',"width=200,height=200,left="+left+",top="+arriba+"'");         
+            abrir.document.write('<title>Datos</title>'+cadena);  
+            setTimeout(function(){
+                abrir.close()
+            }, 10000);//Cambiar teniendo en cuenta el número de segundos
+        }
+        var contador =10; 
+        var fin = function(){
+        contador--;
+        var y = nuevaVentana(contador +"<br>");
+        if(contador == 0){
+            y = nuevaVentana("Estás muerto");
+            clearInterval(intervalo);
+            }
+        }
+        var intervalo = (setInterval(fin, 1000));
+    </script>
+</body>
+</html>

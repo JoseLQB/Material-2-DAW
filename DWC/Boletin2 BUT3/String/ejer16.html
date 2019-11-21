@@ -1,0 +1,22 @@
+<!--Realiza un supertrim de una cadena, eliminando todos los espacios duplicados.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var cadena = prompt("Introduce cadena:");
+    var regex = /\s{2,}/;
+    if (cadena.match(regex)) {
+        cadena.replace(regex, "");
+        document.write(cadena);
+    }else{
+        alert("No hay tantos espacios");
+    }
+    </script>
+    
+</body>
+</html>

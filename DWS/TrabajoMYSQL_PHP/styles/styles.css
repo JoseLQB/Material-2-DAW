@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding: 0;
+}
+html{
+    background-color: aqua;
+    z-index: -2;
+}
+form{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+body{
+    margin-left: 22px;
+    margin-right: 22px;
+    background-color: aliceblue;
+    padding-bottom:250px;
+    padding-top:16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h2, h1{
+    font-size: 28px;
+    color:darkblue;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+table {
+   width: 100%;
+   border: solid 1px darkblue;
+   background-color:beige;
+   
+}
+th, td{
+   text-align: center;
+   border: solid 1px blue;
+   padding-bottom: 24px;
+   padding-top: 24px;
+   
+}
+
+th{
+    width: 25%;
+    color:darkblue;
+    padding: 11px;
+}

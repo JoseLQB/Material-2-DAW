@@ -1,0 +1,27 @@
+<!--Generar aleatoriamente una quiniela de n columnas.
+     Supóngase que las probabilidades
+son:
+➔ 50% para que salga 1
+➔ 30% para que salga x
+➔ 20% para que salga 2-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    for (i = 1; i < 15; i++) {
+        var numero = Math.floor(Math.random() * 3);
+        if (numero == 0) {
+            numero = toString(numero);
+            numero = "x";
+        }
+
+        document.write("Resultado " + i + " : " +numero+ "<br>");  
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fecha = new Date();
+
+        var semana = ["Domingo","Lunes" , "Martes","Miercoles" , "Jueves" , "Viernes" , "Sabado"];
+
+        document.write("<br>Fecha " + fecha.getHours());
+        document.write("<br>Minutos " + fecha.getMinutes());
+        document.write("<br>Segundos " + fecha.getSeconds());
+        document.write("<br>Dias " + semana[fecha.getDay()]);
+        document.write("<br>Mes " + parseInt(fecha.getMonth() + 1));
+        document.write("<br>Año " + fecha.getFullYear());
+
+        function horas(){
+            var fecha = new Date();
+                var semana = ["Domingo","Lunes" , "Martes","Miercoles" , "Jueves" , "Viernes" , "Sabado"];
+                var hora = "";
+                hora = hora + ("<br>Fecha " + fecha.getHours());
+                hora = hora + ("<br>Minutos " + fecha.getMinutes());
+                hora = hora + ("<br>Segundos " + fecha.getSeconds());
+                hora = hora + ("<br>Dias " + semana[fecha.getDay()]);
+                hora = hora + ("<br>Mes " + parseInt(fecha.getMonth() + 1));
+                hora = hora + ("<br>Año " + fecha.getFullYear());
+                document.write(hora);
+            }
+        var y = setInterval(horas, 10000);
+  
+    </script>
+</body>
+</html>

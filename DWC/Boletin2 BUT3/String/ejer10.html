@@ -1,0 +1,45 @@
+<!--Hacer un script que pida el número de teléfono y en función del prefijo nos indique la
+provincia, sólo para Andalucía). Si es otro indicar desconocido.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var telefono = prompt("Introduce un número de teléfono");
+        if(telefono.indexOf("950")==0){
+            document.write("Prefijo de Huelva.");
+
+        }else if(telefono.indexOf("956")==0){
+            document.write("Prefijo de Cádiz.");
+
+        }else if(telefono.indexOf("958")==0){
+            document.write("Prefijo de Granada.");  
+
+        }else if(telefono.indexOf("953")==0){
+            document.write("Prefijo de Jaen."); 
+
+        }else if(telefono.indexOf("957")==0){
+            document.write("Prefijo de Córdoba.");
+
+        }else if(telefono.indexOf("950")==0){
+            document.write("Prefijo de Almería."); 
+
+        }else if(telefono.indexOf("954")==0 || telefono.indexOf("955")==0){
+            document.write("Prefijo de Sevilla."); 
+
+        }else if(telefono.indexOf("951")==0 || telefono.indexOf("952")==0){
+            document.write("Prefijo de Málaga.");  
+        }else{
+            document.write("El prefijo corresponde a otro sitio");
+        }
+    
+    </script>
+    
+</body>
+</html>

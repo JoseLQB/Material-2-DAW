@@ -1,0 +1,22 @@
+<!--Realizar un programa que muestre cuántos días faltan para el próximo cumpleaños del
+usuario y muestre “Felicidades!” si es el día señalado.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cumple = new Date(prompt("Introduce cuando es tu próximo cumpleaños (AAAA, MM, DD)"), 0, 0, 0, 0);
+        var dia = new Date()
+        var falta = (dia.getTime()- cumple.getTime())/1000;
+        if(falta != 0){
+            document.write(falta); 
+        }else{
+            document.write("FELICIDADES");
+        }
+    </script>
+    
+</body>
+</html>

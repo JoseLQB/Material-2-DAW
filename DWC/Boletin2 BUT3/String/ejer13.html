@@ -1,0 +1,33 @@
+<!--Modificar el ejercicio anterior para una vez validado el correo mostrar el usuario y el
+servidor de correo en dos mensajes.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+        var direc=prompt("Introduce una dirección de email:");
+        var dir2=direc.split("@");
+        var usuario ="";
+        var servidor ="";
+        if(!dir2[1] || dir2[0]==""){
+            document.write('Introduce un correo válido.');
+        }else{
+            usuario = dir2[0];
+            var dir3=dir2[1].split(".");
+            if(!dir3[1]){
+                document.write('Introduce un correo válido.');
+            }else{
+                servidor = dir3[0];
+                document.write("<b>Usuario:</b> " + usuario + "<br><b>Servidor:</b> " + servidor);
+            }
+        }
+        
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--Escribe un algoritmo que lea desde la entrada estándar dos fechas dadas por día, mes
+y año y calcule cuál de ellas es anterior a la otra.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fecha1 = new Date(prompt("Introduce una fecha separando por comas (año, mes, día)"));
+        var fecha2 = new Date(prompt("Introduce otra fecha separando por comas (año, mes, día)"));
+
+        if(fecha1 >fecha2){
+            document.write("La primera fecha que has introducido es mayor");
+        }else if (fecha2>fecha1) {
+            document.write("La segunda fecha introducida es la mayor");
+        }else if(fecha1 == fecha2) {
+            document.write("Las dos fechas son iguales");  
+        }else{
+            document.write("Algo has introducido mal");
+        }
+    
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!--Hacer el Tarot que comprueba que la fecha de nac, introducida no es mayor que la
+actual.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var year = parseInt(prompt("Introduce un año"));
+        var mes = parseInt(prompt("Introduce un mes"));
+        var dia = parseInt(prompt("Introduce un dia"));
+
+        var now = new Date();
+        var d = new Date(year, mes, dia);
+        
+        alert(d.getFullYear());
+        alert(now.getFullYear());
+
+
+        if(d.getFullYear()>2 ){   
+            var suma =0;
+            if(year >=1910 && year<=2019 && mes>0 && mes<=12 && dia<=31){
+            var numero = year + mes + dia;
+            numero = numero.toString();
+            if(numero.length>=2){
+                for(var x in numero){
+                    suma = suma + parseInt(numero[x]);////
+                }
+            }
+            // document.write(suma);
+            }else{
+                document.write("Has introducido datos incorrectos");
+            }
+        }else{
+            document.write("Esa fecha no ha llegado todavía");
+        }
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!--Modificar el ejercicio anterior para una vez validado el correo mostrar el usuario y el
+servidor de correo en dos mensajes.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var rex = /.*@.*\..*/;
+        var usuario = "";
+        var servidor = "";
+        do{
+            var direcc = prompt("Indroduce una dirección de correo");
+        }while(!direcc.match(rex));
+        direcc = direcc.split("@");
+        usuario = direcc[0];
+        var dir3=direcc[1].split(".");
+        servidor = dir3[0];
+
+        document.write("USUARIO: " + usuario + "<br>");
+        document.write("SERVIDOR: " + servidor);
+
+    </script>
+</body>
+</html>

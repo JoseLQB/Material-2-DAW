@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+     <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var telefono = prompt("Introduce un número de teléfono");
+        var huelva = /^(959)[0-9]{6}$/;
+        var cadiz = /^(956)[0-9]{6}$/;
+        var granada = /^(958)[0-9]{6}$/;
+        var jaen = /^(953)[0-9]{6}$/;
+        var cordoba = /^(957)[0-9]{6}$/;
+        var almeria = /^(950)[0-9]{6}$/;
+        var sevilla = /^(954)[0-9]{6}$/;
+        var malaga = /^(954)[0-9]{6}$/;
+
+        if(telefono.match(huelva)){
+            document.write("Prefijo de Huelva.");
+
+        }else if(telefono.match(sevilla)){
+            document.write("Prefijo de Sevilla.");
+        }else if(telefono.match(granada)){
+            document.write("Prefijo de Granada.");  
+
+        }else if(telefono.match(jaen)){
+            document.write("Prefijo de Jaen."); 
+
+        }else if(telefono.match(cordoba)){
+            document.write("Prefijo de Córdoba.");
+
+        }else if(telefono.match(almeria)){
+            document.write("Prefijo de Almería."); 
+
+        }else if(telefono.match(sevilla)){
+            document.write("Prefijo de Sevilla."); 
+
+        }else if(telefono.match(malaga)){
+            document.write("Prefijo de Málaga.");  
+        }else{
+            document.write("El prefijo corresponde a otro sitio");
+        }
+    
+    </script>
+    
+</body>
+</html>

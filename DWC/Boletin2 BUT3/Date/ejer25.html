@@ -1,0 +1,54 @@
+<!--Realizar un programa que calcule los días de la semana en que caerán los próximos 50
+cumpleaños del usuario.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cumple = new Date(prompt("Introduce cumpleaños (AAAA, MM, DD)"));
+        
+        for(var i = 0; i<=50; i++){
+            var dia;
+            var varDia = cumple.getDay(); 
+           
+            var añoC = cumple.getFullYear() +1;
+            cumple.setFullYear(añoC);
+            switch (varDia) {
+            case 0:
+                dia="Domingo";
+                break;
+            case 1:
+                dia="Lunes";
+                break;
+            case 2:
+                dia="Martes";
+                break;
+            case 3:
+                dia="Miércoles";
+                break;
+            case 4:
+                dia="Jueves";
+                break;
+            case 5:
+                dia="Viernes";
+                break;
+            case 6:
+                dia="Sábado";
+                break;
+            }
+        document.write("En " + (2020 +i) + " tu cumpleaños cae en " + dia + "<br>");
+        }
+
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--Un proyectil disparado a un ángulo A tiene un alcance horizontal R dado por la siguiente
+expresión:
+R = G
+2∙V ∙sen A ∙ cos A
+2
+Siendo V la velocidad inicial y G = 9,8 m/seg. Calcúlese el alcance limitando los ángulos
+de 0 a 90 y V​a valores positivos.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var a = parseInt(prompt("Introduce A "));
+    var v = parseInt(prompt("Introduce V "));
+    var an = Math.floor(Math.random()*90); 
+
+    var s = 0;
+    var alcance = (2*Math.pow(v,2)*Math.sin(a)*Math.cos(a))/9.8;
+    document.write(alcance);
+    
+    </script>
+</body>
+</html>

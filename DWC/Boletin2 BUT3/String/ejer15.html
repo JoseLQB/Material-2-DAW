@@ -1,0 +1,29 @@
+<!--Realizar un programa que compruebe si una palabra es palíndromo, es decir, si se lee
+igual de izquierda a derecha que de derecha a izquierda. Por ejemplo: RADAR, ARA....-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  
+    function palindromo (palabra){
+        if (palabra.length ==0||palabra.length ==1) {
+            alert("palindromo");
+        }
+        else if (palabra[0] == palabra[ palabra.length - 1]) {
+            palabra = palabra.substr(0,  palabra.length - 1).substr(1);
+        return palindromo(palabra);
+        }else{
+            alert("no palindromo");
+        }
+    }
+    var palabra = prompt("Palabra");
+    palindromo(palabra);
+
+    </script>
+</body>
+</html>

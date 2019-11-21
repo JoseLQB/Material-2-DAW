@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var digitos = "3112";
+        var fecha = new Date();//modifica
+        var hoy = new Date();
+
+        var dia = digitos.substr(0,2);
+        var mes = digitos.substr(2,3);
+        //alert(dia + "---" + mes);
+        fecha.setMonth(mes-1) ;
+        fecha.setDate(dia);
+
+        //alert(hoy.getTime()-fecha.getTime());
+        var tiempo = fecha.getTime()-hoy.getTime();
+        /*var minutos = tiempo/1000/60;
+        var segundos = (tiempo/1000)%60;*/
+        let minutos=Math.trunc(tiempo/1000/60);
+        let segundos = Math.trunc((tiempo/1000)%60);
+        console.log(fecha);
+        console.log(tiempo);
+        console.log(hoy);
+        console.log(minutos);
+        console.log(segundos);
+
+        //segundos = Math.floor(segundos);
+        var cad = "El mundo será destruido en: ";
+       
+
+        function nuevaVentana (cadena){
+            var left = (screen.width/2)-(75+10);
+            var arriba = (screen.height/2)-(100-50);
+            var abrir = window.open('','Nueva',"width=200,height=200,left="+left+",top="+arriba+"'");         
+            abrir.document.write('<title>Datos</title>'+cadena);  
+            setTimeout(function(){
+                abrir.close()
+            }, 10000);//Cambiar teniendo en cuenta el número de segundos
+        }
+        document.write(cad);
+       if(tiempo >0){
+            var contador =tiempo/1000; 
+            var fin = function(){
+            contador--;
+            document.write(minutos + ":"+contador%60 +"<br>");
+            if(contador == 0){
+                minutos = minutos -1;
+            }else if(contador ==0 && minutos == 0){
+                var y = nuevaVentana("Estás muerto");
+                clearInterval(intervalo);
+                }
+            }
+            var intervalo = (setInterval(fin, 1000));
+        }else{
+            var contador =6; 
+            var fin = function(){
+            contador--;
+            document.write(contador +"<br>");
+            if(contador == 0){
+                var y = nuevaVentana("Estás muerto");
+                clearInterval(intervalo);
+                }
+            }
+            var intervalo = (setInterval(fin, 1000));
+        }
+  
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!--Crear un programa que va a crear un reloj digital en el título. Utilice el método
+setInterval() para actualizar la barra de estado una vez cada minuto con la hora actual.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function hora(){
+        var hour = new Date();
+        document.title=hour.toLocaleTimeString();
+    }
+    setInterval(hora,1000);
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!--Leer un texto de la entrada estándar y dir3ar cuántas palabras tiene, cuántas de ellas
+empiezan por A y cuántas líneas tiene.
+Suponemos que una palabra está separada de otra por uno o más espacios, un
+tabulador o un salto de línea y el texto acaba con un punto, no existe ningún punto y
+aparte y las palabras son todas correctas.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var text = prompt("Escribe un texto");
+        var reg = /\w\s|\w$/g;
+        var reg2 = /^A|\sA|^a|\sa/g;
+        var res = text.match(reg);
+        var res2 = text.match(reg2);
+        document.write("Palabras " + res.length);
+        document.write("<br>");
+        document.write("Palabras que empiezan por A " + res2.length);
+    </script>
+</body>
+</html>

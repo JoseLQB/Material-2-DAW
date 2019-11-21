@@ -1,0 +1,18 @@
+<!--Hacer un programa en el que el usuario que introduzca, nombre, profesión y edad
+separado por comas. Después el programa debe mostrar la edad del usuario por
+pantalla.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var datos = prompt("Introduce nombre, profesión y edad separados por comas");
+        var spl = datos.split(",");
+        document.write("Tienes " + spl[2] + " años.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!--Hacer un programa que muestre un menú de opciones con las siguientes operaciones
+posibles:
+● Redondeo a su inmediato superior de un número
+● Redondeo a su inmediato inferior de un número
+● Redondeo al número más cercano
+● Cálculo del número máximo entre dos dados
+● Cálculo del número mínimo entre dos dados
+● Cálculo de un número elevado a otro
+● Cálculo de la raíz cuadrada de un número-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numero = parseInt(prompt("Introduce un número"));
+        var numero2 = parseInt(prompt("Introduce otro"));
+
+        function redSup(num){
+            var a = Math.ceil(num); 
+            alert(a);
+        }
+
+        function redInf(num){
+            var a = Math.floor(num); 
+            alert(a);
+        }
+        function numCerc(num){
+            var a = Math.round(num); 
+            alert(a);
+        }
+        function numMax(num, num2){
+            var a = Math.max(num, num2);
+            alert(a);
+        }
+        function numMin(num, num2){
+            var a = Math.min(num, num2);
+            alert(a);
+        }
+        function numPot(num, num2){
+            var a = Math.pow(num, num2);
+            alert(a);
+        }
+        function raCua(num){
+            var a = Math.sqrt(num);
+            alert(a);
+        }
+    </script>
+    <input type="button" value="Math.ceil" onclick="redSup(numero)"><br>
+    <input type="button" value="Math.floor" onclick="redInf(numero)"><br>
+    <input type="button" value="Math.round" onclick="numCerc(numero)"><br>
+    <input type="button" value="Math.max" onclick="numMax(numero, numero2)"><br>
+    <input type="button" value="Math.min" onclick="numMin(numero, numero2)"><br>
+    <input type="button" value="Math.pow" onclick="raCua(numero)"><br>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!--Introducir una dirección de correo válida-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var rex = /.*@.*\..*/;
+    do{
+        var direcc = prompt("Indroduce una dirección de correo valida");
+    }while(!direcc.match(rex));
+    document.write(direcc + " es válida.");
+    </script>
+</body>
+</html>

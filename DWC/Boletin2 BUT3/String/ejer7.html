@@ -1,0 +1,32 @@
+<!--Leer de teclado una serie de nombres hasta que aparezca la palabra "ULTIMO". ar
+cuántos nombres se han leído, cuántos comienzan C y cuántos tienen la ñ.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var dir3N = 0;
+        var c = 0;
+        var ñ = 0;
+        do{
+            var nombre = prompt("Escribe un nombre");
+            dir3N++;
+            if(nombre.includes("c", 0)){
+                c++;
+            }
+            if(nombre.includes("ñ")){
+                ñ++;
+            }
+
+        }while(nombre!="ULTIMO");
+        
+        document.write("Se han leído " + (dir3N -1) + " nombres <br>");
+        document.write("Se han leído " + c + " palabras que empiezan por C <br>");
+        document.write("Se han leído " + ñ + " palabras que tienen la Ñ <br>");
+    </script>
+    
+</body>
+</html>

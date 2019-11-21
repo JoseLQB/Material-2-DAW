@@ -1,0 +1,29 @@
+<!--Calcular de un conjunto de fechas la menor, la mayor y la diferencia en segundos entre
+ambas.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    
+        var fecha1 = new Date(prompt("Introduce fecha usando (AAAA, MM, DD)"));
+        var fecha2 = new Date(prompt("Introduce otra fecha usando (AAAA, MM, DD"));
+        var diferencia = (fecha1.getTime()- fecha2.getTime())/1000;
+        var diferencia2 = (fecha2.getTime()- fecha1.getTime())/1000;
+        if(fecha1>fecha2){
+            document.write(fecha1 + " es mayor que " + fecha2 + "<br>");
+            document.write("La diferencia en segundos es de " + diferencia);
+
+        }else if(fecha2>fecha1){
+            document.write(fecha2 + " es mayor que " + fecha1 + "<br>");
+            document.write("La diferencia en segudos es de " + diferencia2);
+        }else{
+            document.write("Algo está mal");
+        }
+    </script>
+</body>
+</html>

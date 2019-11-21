@@ -1,0 +1,20 @@
+<!--Hacer un programa que lea una cadena de la entrada estándar y un patrón, y cuente
+cuántas veces aparece dicho patrón en el texto.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cad = prompt("Introduce una frase");
+        var pat = new RegExp(prompt("Introduce un patrón"),'g');
+        var dir3 = cad.match(pat);
+        document.write(dir3.length);
+
+        //math devuelve una array con las coincidencias
+    </script> 
+    
+</body>
+</html>

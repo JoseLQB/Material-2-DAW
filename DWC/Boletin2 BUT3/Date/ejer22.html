@@ -1,0 +1,22 @@
+<!--Realiza un algoritmo que solicite del usuario un tiempo dado en segundos y calcule y
+presente en pantalla dicho tiempo pero expresado en horas, minutos y segundos.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var prSeg= parseInt(prompt("Indica los segundos"));
+        var horas=0;
+        var minutos=0;
+        var segundos =0;
+        //var segundos=0;
+        segundos = prSeg%60;
+        minutos = Math.trunc(prSeg/60)%60;
+        horas = Math.trunc(prSeg/3600);
+        document.write("Horas: " + horas +"<br>Minutos: " + minutos + "<br>Segundos: " + segundos);
+    </script>   
+</body>
+</html>

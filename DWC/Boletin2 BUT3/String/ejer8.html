@@ -1,0 +1,28 @@
+<!--Hacer un programa que lea una cadena de la entrada estándar y un patrón, y cuente
+cuántas veces aparece dicho patrón en el texto.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cad = prompt("Introduce una frase");
+        var pat = prompt("Introduce un patrón");
+        var dir3 = 0;
+        var numP = 0;
+        while(dir3<cad.length){
+            if(cad.substr(dir3, pat.length) == pat){    
+                numP++;
+            }
+            dir3++;
+        }
+        document.write("El patrón " + pat + " se ha introducido " + numP + " veces.");
+
+
+
+    </script>
+    
+</body>
+</html>
