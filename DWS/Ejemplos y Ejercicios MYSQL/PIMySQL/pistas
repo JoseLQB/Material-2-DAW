@@ -1,0 +1,36 @@
+Desde consola
+Para crear base de datos:
+        CREATE DATABASE NOMBREDEBBDD;
+
+Para usar esa BBDD:
+        USE NOMBREDEBBDD;
+
+Para crear nueva tabla:
+        CREATE TABLE TABLAEJEMPLO (NOMBRE VARCHAR(30), CLAVE(VARCHAR(10)));
+
+Para eliminar tabla:
+        DROP TABLE TABLAEJEMPLO;
+
+Para ver información de una tabla:
+        DESCRIBE TABLAEJEMPLO;
+
+
+Para eliminar una BBDD:
+        DROP NOMBREDEBBDD;
+
+Eliminar un campo en concreto de una tabla con todos los datos
+        ALTER TABLE datospersonales DROP EDAD;
+
+Agregar una columna:
+        ALTER TABLE datospersonales ADD COLUMN EDAD INT(2);
+
+Introducir datos a una tabla:
+        INSERT INTO DATOSPERSONALES (NIF, NOMBRE, APELLIDO, EDAD) VALUES ('80079272B', 'JOSE LUIS', 'QUINTANILLA', '31');
+
+Consulta básica:
+        SELECT NOMBRE, APELLIDO FROM datospersonales;
+
+El % y el _:
+    % Sustituye a una cadena de caracteres: %c, termina en c; c%, comienza con c. 
+    _ caracter comodín;
+
