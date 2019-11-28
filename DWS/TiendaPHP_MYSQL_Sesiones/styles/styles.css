@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color:rgba(135, 250, 59, 0.548);
+}
+#regis{
+    position: absolute;
+    margin-left: 5%;;
+    background-color: rgba(255, 252, 68, 0.582);  
+}
+
+.table{
+    padding: 18px;
+    border: solid black 1px;
+}
+.warning{
+    position: absolute;
+    margin-top: 190px;
+    margin-left: 8%;
+    color: red;
+}
+
+
+#cest{
+    position: absolute;
+    margin-left: 50%;
+    font-size: 11px;
+
+}
+#listado{
+    position: absolute;  
+    background-color: rgba(255, 252, 68, 0.582);  
+}
+#listado>h1, #listado>table{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+table, td{
+    padding: 10px;
+}
