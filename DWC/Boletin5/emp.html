@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="formulario">
+        <input type="text" name="nombre" id="name" placeholder="Nombre:" maxlength="30"><br>
+        <input type="radio" name="sex" id="h" value="hombre">Hombre
+        <input type="radio" name="sex" id="m" value="mujer">Mujer<br>
+        <input type="checkbox" name="term" id="term">Términos y codiciones<br>
+        <input type="submit" value="Enviar" name="enviar" id="enviar">
+
+    </form>
+    <script>
+ 
+            var formulario = document.getElementsByName("formulario")[0],
+                elementos = formulario.elements,
+                boton = document.getElementById("enviar");
+
+            var validarNombre = function(e){
+                if(formulario.nombre.value==0){
+                    alert("Completa el campo nombre");
+                    e.preventDefault();
+                }
+            }
+            var validaRadio = function(e){
+                if(formulario.sex[0].checked == true || formulario.sex[1].checked == true){
+                }else{
+                    alert("Completa el campo sexo");
+                    e.preventDefault();
+                }
+            }
+            var validaCheck = function(e){
+                if(formulario.term.checked == false){
+                    alert("Completa los terminos");
+                    e.preventDefault();
+                }
+            }
+            var validar = function(e){
+                validarNombre(e);
+                validaRadio(e);
+                validaCheck(e);
+            }
+
+            formulario.addEventListener("submit", validar);
+    </script>
+</body>
+</html>
