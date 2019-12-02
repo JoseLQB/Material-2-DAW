@@ -1,3 +1,18 @@
+window.addEventListener("load", inicio, false);
+function inicio(){
+    document.getElementsByTagName("input")
+    for(var i = 0; i<document.getElementsByTagName("input").length; i++){
+        document.getElementsByTagName("input")[i].addEventListener("blur", mayusculas, false);
+    }
+    
+}
+
+function bor(){
+    for(var i = 0; i<document.getElementsByTagName("input").length; i++){
+        document.getElementsByTagName[i].value == "";      
+    }
+}
+
 //Ejercicio 1
 
 var nuevaVentana = (cadena)=>{
@@ -9,9 +24,8 @@ var nuevaVentana = (cadena)=>{
 
 function mayusculas() {
     //document.getElementsByTagName("input")[0].value=document.getElementsByTagName("input")[0].value.toUpperCase();
-    for(var i = 0; i<document.getElementsByTagName("input").length; i++){
-        document.getElementsByTagName("input")[i].value=document.getElementsByTagName("input")[i].value.toUpperCase();
-    }
+        this.value=this.value.toUpperCase();
+    
 }
 
 
@@ -34,3 +48,55 @@ function check() {
         alert("Sigue intentándolo");
     }
 }
+
+//Ejercicio 5
+
+
+function sms(cara) {  
+    var lim = 145;
+    var car = cara.value.length;
+    var max = document.getElementById("ejer6").setAttribute("max", lim);
+    var msg = document.getElementById("d");
+    var resto = lim - car;
+    msg.innerHTML = resto;
+}
+
+//Ejercicio 6
+
+function confir(){
+    var ok = true;
+    var regex = /[A-Z][a-z]{0}/gm;
+    var campo = document.getElementById("nombre").value;
+    if(campo.length<1 || !regex.test(campo)){
+        ok = false;
+    }
+    if(!ok){
+        alert("No lo estás haciendo bien");
+    }
+    return ok;
+} 
+
+//Ejercicio 7
+
+
+function cambiarColor(x){
+    var b = document.getElementById("formulario");
+    b.style.backgroundColor = x.value;
+}
+
+//Ejercicio 8
+
+function validaPass() {
+    for(var i = 0; i<document.getElementsByTagName("input").length; i++){
+        if(document.getElementsByTagName[i].length<1){
+            alert("Completa todos los campos");
+        }
+    }
+    if(document.getElementById("pass").value!=document.getElementById("passc").value){  
+        alert("Deben coincidir las contraseñas");
+    }
+        
+}
+
+//Ejercicio 9
+

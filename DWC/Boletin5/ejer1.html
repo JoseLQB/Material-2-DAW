@@ -8,17 +8,17 @@
 <body>
     <form action="" method="post" name="ejer1" id="ejer1">
         Nombre<br>
-        <input type="text" name="nombre" id="nombre" onblur="mayusculas()" >
-        <input type="text" name="apellido" id="apellido"  onblur="mayusculas()" >
+        <input type="text" name="nombre" id="nombre"  >
+        <input type="text" name="apellido" id="apellido"  >
         <br><br>Nombre de usuaruo<br>
-        <input type="text" name="us" id="us" placeholder="@gmail.com" onblur="mayusculas()" >
+        <input type="text" name="us" id="us" placeholder="@gmail.com" >
         <br><br>Contraseña<br>
         <input type="password" name="pass" id="pass">
         <br><br>Conirma tu contraseña<br>
         <input type="password" name="passc" id="passc">
         <br><br>Fecha de nacimiento<br>
-        <input type="text" name="dia" id="dia" placeholder="Día" onblur="mayusculas()" >
-        <input type="month" name="mes" id="mes">
+        <input type="text" name="dia" id="dia" placeholder="Día">
+        <input type="month" name="mes" id="mes">-->
         <br><br>Sexo <br>
         <datalist name="sexo" id="sexo">
             <option value="Hombre">
@@ -28,15 +28,12 @@
         <br><br>Teléfono móvil <br>
         <input type="tel" name="telefono" id="telefono">
         <br><br>Tu dirección de correo electrónico actual<br>
-        <input type="email" name="corr" id="corr" onblur="mayusculas()" ><br><br>
-        <script>
-            var a = "";
-            for(var i = 0; i<document.getElementsByTagName("input").value.length; i++){
-                a = a + document.getElementsByTagName("input")[i].value;
-            }
-        </script>
-        <button onclick="nuevaVentana(a)">Enviar</button>
+        <!--<input type="email" name="corr" id="corr" " ><br><br>-->
+        <input type="button" value="Borrar" name="borrar">
 
+    
+        <!--<button onclick="validaPass()">Enviar</button>-->
+        
 
 
 

@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="funciones.js"></script>
 </head>
 <body>
-    <script>
-        function cambiarColor(x){
-            var b = document.getElementById("formulario");
-            b.style.backgroundColor = x.value;
-        }
-    
-    </script>
     <form action="" name="formulario" id="formulario">
         <input type="radio" name="color" id="rojo" value="red" onchange="cambiarColor(this)" >Rojo<br>
         <input type="radio" name="color" id="verde" value="green" onchange="cambiarColor(this)">Verde<br>

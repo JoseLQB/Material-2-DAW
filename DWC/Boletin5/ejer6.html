@@ -3,21 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script src="funciones.js"></script>
 </head>
-<script>
-    function confir(){
-        var ok = true;
-        var regex = /[A-Z][a-z]{0}/gm;
-        var campo = document.getElementById("nombre").value;
-        if(campo.length<1 && !regex.test(campo)){
-            ok = false;
-        }
-        if(!ok){
-            alert("No lo estás haciendo bien");
-        }
-        return ok;
-    } 
-</script>
 <body>
     <form action="mailto:jose@gmail.com" method="post">
         <input type="text" id="nombre">Nombre<br>
