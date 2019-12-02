@@ -3,13 +3,14 @@ function inicio(){
     document.getElementsByTagName("input")
     for(var i = 0; i<document.getElementsByTagName("input").length; i++){
         document.getElementsByTagName("input")[i].addEventListener("blur", mayusculas, false);
+        document.getElementsByTagName("input")[i].addEventListener("click", bor, false);
     }
     
 }
 
 function bor(){
     for(var i = 0; i<document.getElementsByTagName("input").length; i++){
-        document.getElementsByTagName[i].value == "";      
+        document.getElementsById["nombre"].value == "";      
     }
 }
 
