@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,17 +18,15 @@
     <?php 
     if(isset($_POST["borrar"])){
         
-        setcookie("Idioma", "", time() -50);
-        setcookie("Perfil", "", time() -50);
-        setcookie("Hora","", time() -50);
+        session_destroy();
         echo "<br><font color='red'>Información de la sesión eliminada</font>";
     }
     
 
-    if(isset($_COOKIE["Idioma"])&&(isset($_COOKIE["Perfil"]))&&(isset($_COOKIE["Hora"]))&& !isset($_POST["borrar"])){
-        echo "Tu idioma es el " . $_COOKIE["Idioma"].".<br>";
-        echo "Tu perfil " . $_COOKIE["Perfil"]. " será público.<br>";
-        echo "Tú zona horaria es " .$_COOKIE["Hora"].".<br>";
+    if(isset($_SESSION["idioma"])&&(isset($_SESSION["perfil"]))&&(isset($_SESSION["hora"]))&& !isset($_POST["borrar"])){
+        echo "Tu idioma es el " . $_SESSION["idioma"].".<br>";
+        echo "Tu perfil " . $_SESSION["perfil"]. " será público.<br>";
+        echo "Tú zona horaria es " .$_SESSION["hora"].".<br>";
     }else{
         echo "<br>No hay información";
     }
