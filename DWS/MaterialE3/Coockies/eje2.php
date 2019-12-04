@@ -12,9 +12,12 @@
         echo "<br>";
         echo $_COOKIE["Prueba2"];
     }else{
-        echo "Las coockie no se han creado";
+        echo "Las coockies no se han creado<br>";
     }
     
+    
     ?>
+    <a href="eje1.php">Volver</a><br>
+    <a href="eje3.php">Borrar</a>
 </body>
 </html>
