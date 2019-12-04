@@ -18,8 +18,9 @@
     <h1>Hola<?php echo " " .$_SESSION["usuario"]. " ";?> puedes empezar tu compra</h1>
 
     <?php 
-    include("conexion.php");
-    $listado = $conn->query("SELECT * FROM PRODUCTO");
+    include("funciones.php");
+    $conn =conexionPDO("localhost", "dwes", "root", "");
+    $listado = $conn->query("SELECT * FROM producto");
     $registros = $listado->fetchAll(PDO::FETCH_OBJ);
     ?>
     <table>
@@ -88,13 +89,26 @@
             echo "<br><hr>Número de productos: ".$cont. "  " . "Total a pagar: " .$total;
             ?>
             <br><br><a href="cesta.php"><input type="button" value="Resumen de compra"></a>
-            <?php
+            <input type="submit" value="Vacíar Cesta" name="vacia">
+            
+            <?php  
+        
 
-        }  
         }
-        ?>
+        }
 
-        <br><br><br><a href="logoff.php"><input type="button" value="Cerrar Sesion"></a>
+        ?>
+            <form action="" method="post">
+            <br><a href="logoff.php"><input type="button" value="Cerrar Sesion"></a>
+                
+                <?php 
+                if(isset($_POST["vacia"])){
+                    $_SESSION["cesta"]=[];
+                }
+                
+                ?>
+            </form>
+        <br><br><br>
         </div>
 
 </body>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,27 +23,34 @@
         <tr>
             <td colspan="2"><input type="submit" name="login" value="LOGIN"></td>
         </tr>
+        <tr>
+            <td colspan="2"><a href="registro.php">Pulsa aquí si no tienes cuenta en la tienda</a></td>
+        </tr>
     </table>
     
+    
+    </form>
+    </div>
     </form>
     </div>
     <?php 
     
     if(isset($_POST["login"])){
-
-        include("conexion.php");
+        //include("conexion.php");
+        include("funciones.php");
+        $conn =conexionPDO("localhost", "dwes", "root", "");
         try{
 
             $sql="SELECT * FROM USUARIOS WHERE USUARIOS = :usuarios AND PASS= :pass";
             $resultado = $conn->prepare($sql);
-            $login = ($_POST["usuario"]);
-            $pass =($_POST["pass"]);
+            $login = $_POST["usuario"];
+            $pass =$_POST["pass"];
+            $pass =$pass;
             $resultado->bindValue(":usuarios", $login);
             $resultado->bindValue(":pass", $pass);
             $resultado->execute();
             $nr = $resultado->rowCount(); //devuelve 0 o 1
             if($nr!=0){
-                session_start();
                 $_SESSION["usuario"]=$_POST["usuario"];
                 header("Location:productos.php");
             }else{
