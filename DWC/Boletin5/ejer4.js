@@ -1,3 +1,8 @@
+window.onload=iniciar;
+function iniciar(){
+    document.getElementById("ok").addEventListener('click', check, false);
+}
+
 function check() {
     var q1 = document.cuestionario.q1.value;
     var q2 = document.cuestionario.q2.value;
