@@ -26,6 +26,9 @@ function getCookie(cname){
     return "";
 }
 
+function guardar() {
+}
+
 function checkCookie() {
     var username = getCookie("username");
     if (username != "") {
