@@ -1,7 +1,6 @@
 window.onload=iniciar;
 function iniciar(){
-    //document.getElementById("ok").addEventListener("click", checkCookie, false);
-    document.getElementById("nombre").addEventListener("blur", checkCookie, false);
+    document.getElementById("enviar").addEventListener("click", checkCookie, false);
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -26,23 +25,19 @@ function getCookie(cname){
     }
     return "";
 }
-
-
-
 function checkCookie() {
-    var nombre = document.getElementById("nombre").value;
-    var username = getCookie(nombre);
+    var username = getCookie("username");
     if (username != "") {
-        alert("Hola " + username);
+        setCookie("username", info, 365);
+        var c = document.getElementById("direccion").value;
+        c = dir;
     } else {
-        var nombre = document.getElementById("nombre").value;	 
-        var numero = document.getElementById("numero").value;
-        var cafe = document.getElementById("cafe").value;
-        var info = nombre + "-" + numero + "-" + cafe; 
-        if (nombre != "" && nombre != null) {
-            setCookie(nombre, info, 365);
-            var c = document.getElementById("cookie");
-            c.innerHTML = "Hola " + nombre + "<br>Hay una tarifa especial para su " + cafe;
+        var dir = document.getElementById("direccion").value;
+        var info = dir 
+        if (dir != "" && dir != null) {
+            setCookie("username", info, 365);
+            var c = document.getElementById("direccion").value;
+            c = dir;
         }
     }
 }

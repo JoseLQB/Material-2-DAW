@@ -9,7 +9,8 @@ function inicio(){
 
 function mayusculas() {
     //document.getElementsByTagName("input")[0].value=document.getElementsByTagName("input")[0].value.toUpperCase();
-        this.value=this.value.toUpperCase();  
+        this.value=this.value.toUpperCase();
+        nuevaVentana(this.value);  
 }
 
 var nuevaVentana = (cadena)=>{

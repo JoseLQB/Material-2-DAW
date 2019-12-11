@@ -1,6 +1,6 @@
 <?php 
     class Coche{
-        private $ruedas; //Esta variable solo es accesible desde la propia clase
+        private $ruedas; //Esta variable solo es accesible desde la propia
         public $color;
         public $motor;
 
