@@ -26,16 +26,15 @@ function getCookie(cname){
     return "";
 }
 function checkCookie() {
-    var username = getCookie("username");
+    var name = "Dir: " + document.getElementById("nombre").value;
+    var username = getCookie(name);
     if (username != "") {
-        setCookie("username", info, 365);
-        var c = document.getElementById("direccion").value;
-        c = dir;
+        alert("Hola")
     } else {
         var dir = document.getElementById("direccion").value;
         var info = dir 
         if (dir != "" && dir != null) {
-            setCookie("username", info, 365);
+            setCookie(name, info, 365);
             var c = document.getElementById("direccion").value;
             c = dir;
         }
