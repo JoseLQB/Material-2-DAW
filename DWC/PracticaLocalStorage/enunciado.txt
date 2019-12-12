@@ -1,0 +1,33 @@
+PRÁCTICA UT5
+
+©2018 IES Polígono Sur – Sevilla Departamento de informática
+EJERCICIO 1. Realiza una página web para consulta de personas por DNI:
+
+Donde:
+El DNI es un número de 8 cifras seguido de un dígito de control (una letra) calculado
+mediante módulo 23: eliminando la letra, se divide el número entre 23. Dicha división dejará
+un resto entre 0 y 22. Así, se le asigna la letra de control según la equivalencia siguiente:
+RESTO 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+LETRA T R W A G M Y F P D X B N J Z S Q V H L C K E
+
+Especificaciones:
+ El código cliente debe estar en un archivo separado del HTML.
+ El formulario deberá validarse sobre la marcha de manera que el usuario conozca cuando el
+campo que está rellenando está correcta o incorrectamente relleno (formato libre, por ejemplo
+borde rojo o una etiqueta que muestre un mensaje de error). Deberá usarse de eventos
+registro W3C.
+ Deberá usarse también una expresión regular para comprobar que el DNI sigue el formato
+adecuado.
+ El formulario deberá autosalvar cada entrada del usuario. Para ello, deberá usarse DOM
+Storage de forma que se almacene el dni de manera permanente, sólo si el dato es correcto y
+se envía. Además deberá se deberá comprobar si ese dni ya se ha almacenado en cuyo caso
+deberá aparecer un mensaje en una etiqueta html que indique el número de veces que se ha
+consultado ese dni.
+ El botón Restablecer resetea el formulario, pedirá confirmación antes de hacerlo. El botón
+Enviar consulta realiza la búsqueda (puedes probar con un “mailto” para que se envía, si todo
+está correcto.
+ El formulario no deberá enviarse hasta que esté correcto.
+ Utilizar las estructuras de control que más se adecuen.
+ Utilizar código autodocumentado: Los subprogramas y las variables deben tener nombres
+alusivos.
+ De existir errores de ejecución deben ser simples.
