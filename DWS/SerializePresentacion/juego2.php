@@ -1,15 +1,16 @@
 <?php 
+    //Creamos la clase juego
     class Juego{
         private $nombre;
         private $autor;
         private $genero;
         private $compañia;
-
-        public function Juego(){
-            $this->nombre = "Death Stranding";
-            $this->autor = "Kojima";
-            $this->genero = "Accion";
-            $this->compañia = "Kojima Productions";
+        //Constructor
+        public function __construct($nombre, $autor, $genero, $compañia){
+            $this->nombre=$nombre;
+            $this->autor=$autor;
+            $this->genero=$genero;
+            $this->compañia=$compañia;
         }
 
         public function getNombre(){

@@ -1,7 +1,10 @@
 <?php 
+//Creamos la sesion
 session_start();
 include("juego2.php");
-$juego = new Juego();
+//Creamos un objeto juego
+$juego = new Juego("Metal Gear", "Hideo Kojima", "Accion", "Konami");
+//Metemos el objeto en la sesion 
 $_SESSION["juego"]=$juego;
 
 ?>
@@ -21,6 +24,6 @@ $_SESSION["juego"]=$juego;
     <br>
     <form action="juego2recibe.php" method="post">
     <input type="submit" value="Enviar">
-    </form>
+    </form><!--Este formulario enviará la sesión con el objeto juego a la siguinte página, donde se mostrará-->
 </body>
 </html>
