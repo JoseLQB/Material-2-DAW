@@ -16,9 +16,7 @@ include("clases.php");
     <title>Document</title>
 </head>
 <body>
-
     <?php
-
     if(isset($_POST["env"]) && isset($_POST["animal"])){
         $tipo = $_POST["animal"];
         if($tipo == "perro"){
@@ -73,32 +71,7 @@ include("clases.php");
             </form>
             <?php
         } 
-    /*  
-    }
-   
-    elseif(isset($_POST["envi"])){
-        if($tipo == "perro"){
-            $animal = new Perro($_POST["nombre"], $_POST["sexo"]);
-            ?>
-            <form action="" method="post">
-                <input type="submit" value="Muerde">
-                <input type="submit" value="Canta">
-                <input type="submit" value="Duerme">
-            </form>
-            <?php
-        }elseif($tipo == "gato"){
-            $animal = new Gato($_POST["nombre"], $_POST["sexo"]);
-        }elseif($tipo == "canario"){
-            $animal = new Canario($_POST["nombre"], $_POST["sexo"]);
-        }elseif($tipo == "pinguino"){
-            $animal = new Pinguino($_POST["nombre"], $_POST["sexo"]);
-        }elseif($tipo == "lagarto"){
-            $animal = new Lagarto($_POST["nombre"], $_POST["sexo"]);
-        }
-        */
     }else{
-        
-    
         ?>
             <p>Selecciona un animal</p>
             <form action="" method="post">
@@ -116,7 +89,6 @@ include("clases.php");
             </select>
             <p>Escribe el nombre del animal</p>
             <input type="text" name="nombre" id="">
-            
             <hr>
             <input type="submit" name="env" value="Enviar">
             
