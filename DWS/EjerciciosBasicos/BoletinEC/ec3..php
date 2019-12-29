@@ -10,7 +10,7 @@ nombre del día de la semana.
 <body>
     <?php
 
-    $dia = "3"
+    $dia = "3";
     switch ($dia) {
         case '1':
         echo "lunes";
