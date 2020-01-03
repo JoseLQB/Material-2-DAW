@@ -18,6 +18,7 @@ function creaImagen(){
     var r = Math.floor(Math.random() * (5 - 0)) + 0;
     document.getElementById("im").innerHTML = arrI[r] + r;
 }
+
 function crea2Imagen(){
     var r = Math.floor(Math.random() * (5 - 0)) + 0;
     var r1 = Math.floor(Math.random() * (5 - 0)) + 0;
