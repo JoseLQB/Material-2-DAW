@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="clasePerson.js"></script>
+    <script src="clasePaciente.js"></script>
+    <script src="claseMedico.js"></script>
+    <script src="claseCita.js"></script>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        
+        var pepe = new Paciente("Jose", "QB", "80000001C", 1234);
+        var pedro = new Paciente("Pedro", "ZZ", "00322111S", 321);
+        var julian = new Paciente("Julian", "BS", "44444444D", 2100);
+
+        var juan = new Medico("Juan", "WC", "12300001O", 432);
+        var adolfo = new Medico("Adolfo", "DS", "23488881X", 002);
+        
+        var fecha = new Date();
+        fecha.setMonth(11, 3);
+        var cita1 = new Cita(fecha, juan, pepe);
+        document.write(cita1.fecha);
+        document.write("<br>");
+        var fecha2 = new Date();
+        fecha2.setMonth(11, 5);
+        var cita2 = new Cita(fecha2, adolfo, pedro);
+        document.write(cita2.Medico.nombre);
+
+        var citas = [];
+        citas.push(cita1);
+        citas.push(cita2);
+        document.write("<br>Citas: <br>");
+        verTodasCitas(citas);
+        eliminaCita(cita1, citas);
+        buscaCita("Pedro", citas);
+        document.write("<br>" + ordenaCitas(citas));
+
+        
+
+    </script>
+</body>
+</html>
+<!--Crear una clase persona, medico, paciente y cita.
+Añadir las siguientes funcionalidades:
+	-Introducir nueva cita-
+	-Eliminar una cita-
+	-Buscar una cita-
+	-Mostrar una cita-
+	-Ordenar cita-
+Probar que todo funciona.-->
