@@ -1,10 +1,12 @@
 window.onload = inicio;
 function inicio(){
-    addTable();
+    s();
 }
-
-function addTable(){
+function s(){
     var nt = document.createElement("table");
+    var atr = document.createAttribute("border");
+    atr.value = "2px";
+    nt.setAttributeNode(atr);
     for (let i = 0; i < 20; i++) {
         var np2 = document.createElement('tr');
         nt.appendChild(np2);   
@@ -15,8 +17,5 @@ function addTable(){
             np2.appendChild(np3);   
         } 
     }
-
     document.getElementsByTagName("body")[0].appendChild(nt);
-
-
 }
