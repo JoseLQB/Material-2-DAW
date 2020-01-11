@@ -10,7 +10,7 @@
    </style>
 </head>
 <body>
-    <h1>MVC</h1><br>
+    <h1>TIENDA MVC</h1><br>
     <?php 
     include("controller/controlador.php");
     
