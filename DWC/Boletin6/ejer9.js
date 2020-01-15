@@ -16,7 +16,6 @@ function ejer9(){
 
 function cord(){
     var ns = document.createElement("div");
-    var text1 = document.createTextNode("Hola : aloH");
     ns.setAttribute("id", "c");
     document.getElementsByTagName("body")[0].appendChild(ns);
 }
