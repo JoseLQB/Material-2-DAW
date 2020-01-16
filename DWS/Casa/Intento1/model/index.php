@@ -13,7 +13,7 @@
     <h1>Practica 5</h1><br>
     <center><h2>Introduce tus datos para acceder a la aplicación</h2></center>
     <div id="regis">
-    <form action="controller/controlLogin.php" method="post">
+    <form action="login.php" method="post">
     <table border="0" align="center">
         <tr>
             <td>Usuario &nbsp; &nbsp;</td>
@@ -30,11 +30,6 @@
     </form>
     
     <?php 
-   /* if(isset($_POST["login"])){*/
-       // include("controller/controladorAdmin.php");
-   /*  }else{
-        include("controller/controladorNormal.php");
-    }*/
     ?>
 </body>
 </html>

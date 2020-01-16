@@ -1,31 +1,23 @@
-<?php 
+<?php
+    try{
+        $conn= new PDO("mysql:host=localhost; dbname=Practica5", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn->exec("SET CHARACTER SET UTF8");
+        // echo "ok"; 
+    }catch(Exception $e){
+        die("Error" . $e->getMessage());
+        echo "Linea del error" . $e->getLine();
+    }
 
-    class Personas{
-        private $db; //conexion
-        private $personas;
+    if(isset($_POST["login"])){
 
-        public function __construct(){
-            require_once("../model/Conn.php");
-            $this->db=Conectar::conexion();//se llama al método conexion de la clase conectar
-            $this->personas=array();
-        }
+        try{
 
-        public function getPersonas(){//Devuelve todos los Personas en un array
-            $consulta=$this->db->query("SELECT * FROM usuario");
-
-            while($filas=$consulta->fetch(PDO::FETCH_ASSOC)){
-                $this->personas[]=$filas;
-
-            }
-            return $this->personas;
-        }
-
-        public function login(){
             $sql="SELECT * FROM usuario WHERE usuario = :usuario AND pwd= :pass ";
-            $resultado = $this->db->prepare($sql);
+            $resultado = $conn->prepare($sql);
             $login = $_POST["user"];
             $sql2="SELECT rol FROM usuario WHERE usuario = '$login'";
-            $cRol = $this->db->query($sql2);
+            $cRol = $conn->query($sql2);
             $reg = $cRol->fetchAll(PDO::FETCH_OBJ);
             foreach($reg as $k){
                 $rol = $k->rol;
@@ -36,10 +28,10 @@
             $resultado->bindValue(":pass", $pass);
             $resultado->execute();
             $nr = $resultado->rowCount(); //devuelve 0 o 1
-            if($nr!=0){//comprueba si coinciden usuario y contraseña
+            if($nr!=0){
                 session_start();
                 $_SESSION["usuario"]=$_POST["user"];
-                if($rol == "admin"){ //comprueba el rol del usuario
+                if($rol == "admin"){
                     header("Location:viewAdmin.php");
                 }else{
                     header("Location:viewNormal.php");
@@ -47,7 +39,10 @@
             }else{
                ?> <br><p class="warning">Error, usuario o contraseña incorrectos</p>
             <?php
-            }
+        }
+        }catch(Exception $e){
+            die("Error" . $e->getMessage());
+            echo "Linea del error" . $e->getLine();
         }
     }
 

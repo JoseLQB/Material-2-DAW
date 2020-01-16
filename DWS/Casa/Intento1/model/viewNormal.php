@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style>
-    </style>
 </head>
 <body>
-        <?php  
-        echo "<p>Te has logueado con éxito, felicidades.</p>"
-        ?>
+    <?php
+    
+    echo "<h3>Hola usuario</h3>"
+    
+    ?>
 </body>
 </html>

@@ -11,7 +11,6 @@
 </head>
 <body>
 <table>
-
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
         <table width="50%" border="0" align="center">
             <tr>
@@ -19,7 +18,6 @@
                 <td>Nombre de Usuario</td>
                 <td>Email</td>
                 <td>Rol</td>
-                <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
