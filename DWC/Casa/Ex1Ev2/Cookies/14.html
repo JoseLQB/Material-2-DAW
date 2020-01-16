@@ -1,0 +1,31 @@
+<!--Crear   un   formulario   que   contiene   un   conjunto   de   casillas   de   verificación   con  
+     diferentes tipos   de   cafés   ­   espresso,   cappuccino,   moka,   y   así   sucesivamente.   
+     Pida   al   usuario su   nombre   y   número   de   habitación   y   seleccionar   un   tipo   de   café.   
+     Indicar   al   usuario   que va   a   enviar   el   café   a   su   número   de   habitación.   
+     Cree   las   cookie   para   recordar   las preferencias   del   usuario.   La   próxima   vez   que   
+     el   usuario  entre en la   página, en introduzca su nombre de usuario, se dirá que hay   una tarifa especial 
+     para su (utilice el valor de la cookie) café favorito.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ej14</title>
+    <script src="14.js"></script>
+</head>
+<body>
+    <form action="" method="post" name="formulario">
+        <label>Nombre:</label><input type="text" name="nombre" id="nombre">
+        <label>Habitacion:</label><input type="text" name="room" id="room">
+        <select name="cafe" id="cafe">
+            <option value="Espresso">Espresso</option>
+            <option value="Cappuccino">Cappuccino</option>
+            <option value="Moka">Moka</option>
+        </select>
+        <input type="button" id="enviar" value="Enviar">
+    </form>
+</body>
+</html>
