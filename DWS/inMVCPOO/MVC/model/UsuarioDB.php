@@ -1,5 +1,5 @@
 <?php 
-	require_once('DB.php');
+	require_once('Db.php');
 	require_once('Usuario.php');
 	
 	class UsuarioDB{
@@ -18,7 +18,7 @@
 			$insert->execute();
 		}
 
-		//obtiene el usuario para el login
+		//Para el login ------------------------
 		public function obtenerUsuario($usuario, $pwd){
 			$db=Db::conectar();
 			$select=$db->prepare('SELECT * FROM usuario WHERE usuario=:usuario');//AND pwd=:pwd
@@ -36,7 +36,7 @@
 			return $usuario;
 		}
 
-		//busca el usuario del usuario si existe
+		//Busca a un usuario y comprueba que exista
 		public function buscarUsuario($usuario){
 			$db=Db::conectar();
 			$select=$db->prepare('SELECT * FROM usuario WHERE usuario=:usuario');
@@ -49,6 +49,33 @@
 				$usado=True;
 			}	
 			return $usado;
+		}
+
+		public function eliminaUsuario($usuario){
+
+
+			$db=Db::conectar();
+			$select=$db->prepare('DELETE FROM usuario WHERE id = :id');
+			$rows=$select->execute(array(':id' =>$id));
+			if($rows >0){
+				echo '<center><h1><font color="green">¡Elemento borrado!</font></h1></center><br>';
+				?>
+				<form action="../view/vistaAdmin.php" method="post">
+					<center><input type="submit" value="Continuar"></center>
+				</form>
+				<?php
+			} 
+			/*
+			} catch(PDOException $e) {
+				echo 'Error: ' . $e->getMessage();
+			}
+			
+		   //Si hemos pulsado cancelar se nos redirigirá al listado inicial
+		}else if($_POST["el"]=="Cancelar"){
+			header("Location: listado.php");
+		}*/
+		
+
 		}
 	}
 ?>

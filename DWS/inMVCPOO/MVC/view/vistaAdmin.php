@@ -1,8 +1,8 @@
 <?php 
-	session_start();
+	/*session_start();
 	if (!isset($_SESSION['usuario'])) {
 		header('Location: ../index.php');
-	}
+	}*/
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +19,31 @@
 </header>
     <div>
         <form action="controllerLogin.php" method="post">
+        <table>
+            <tr>
+                <td><label>Nombre de usuario</label></td>
+                <td><input type="text" name="usuario"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
             <p>
-                <label>Nombre de usuario</label>
-                <input type="text" name="usuario">
+                
+                
             </p>
             <p>
                 <label>Password</label>

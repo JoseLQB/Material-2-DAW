@@ -31,7 +31,7 @@
             echo "Nombre de usuario o clave incorrectos";
 		}
 	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
-		header('Location: index.php');
+		header('Location: ../index.php');
 		unset($_SESSION['usuario']); //destruye la sesión
 	}
 ?>

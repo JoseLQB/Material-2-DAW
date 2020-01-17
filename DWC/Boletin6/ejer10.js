@@ -1,30 +1,26 @@
-window.onload=inicio;
-function inicio(){
-    ejer10();
-    document.getElementById("click").addEventListener("click", divOculto, false);
+window.addEventListener('load',iniciar, false);
+function iniciar() {
+    cabecera();
+    document.getElementsByTagName('a')[0].addEventListener('click',muestra, false);
 }
 
-function ejer10(){
-    var na = document.createElement("a");
-    var text1 = document.createTextNode("S o y un e n l a c e");
-    na.setAttribute("href", "#");
-    na.setAttribute("id", "click");
-    na.appendChild(text1);
-    document.getElementsByTagName("body")[0].appendChild(na);
-
-    var na2 = document.createElement("div");
-    var text1 = document.createTextNode("Hola");
-    na2.setAttribute("id", "oculto");
-    na2.setAttribute("style", "display:none");
-    
-    na2.appendChild(text1);
-    document.getElementsByTagName("body")[0].appendChild(na2);
+function cabecera() {
+    var titulo = document.createElement('title');
+    var nuevoTexto = document.createTextNode('Este es el ejercicio 10');
+    titulo.appendChild(nuevoTexto);
+    document.getElementsByTagName("head")[0].appendChild(titulo);
 }
 
-function divOculto(){
-    var na = document.createElement("div");
-    var text1 = document.createTextNode("Hola");
-    na.setAttribute("id", "oculto");
-    na.appendChild(text1);
-    document.getElementsByTagName("body")[0].appendChild(na);
+function muestra() {
+    if (document.getElementById("capa")!=null) {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("capa"));
+    }
+    var izq = event.clientX;
+    var top = event.clientY;
+    var capa = document.createElement('div');
+    var texto = document.createTextNode('Te sigo');
+    capa.appendChild(texto);
+    capa.setAttribute("id", "capa");
+    capa.setAttribute("style", "position: absolute; left: "+izq+"px; top: "+top+"px;");
+    document.getElementsByTagName("body")[0].appendChild(capa);
 }
