@@ -63,8 +63,9 @@ function practica(){
 
 }
 
-function muestraNoticias(){
-    document.getElementById("2").style.display = "block";  
+function muestraNoticias(e){
+   e.currentTarget.parentNode.childNodes[3].style.display = "block";////////<====
+    //document.getElementById("2").style.display = "block";  
 }
 
 function muestraDescripcion(){
