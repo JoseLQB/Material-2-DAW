@@ -4,8 +4,7 @@ abstract class PizzeriaDB {
 	private static $server = 'localhost';
 	private static $db = 'pizzeria';
 	private static $user = 'root';
-	private static $password = 'usuario';
-	private static $port=3307;
+	private static $password = '';
 
 	public static function connectDB() {
 		try {
