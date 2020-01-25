@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    $("p").click(function(){
-        $("a").hover();
+    $("p").hover(function(){
+        $(".show").text("Hola");
+    }, function(){
+        $(".show").text("Adios");
     });
 });
