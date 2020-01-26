@@ -1,0 +1,151 @@
+PRACTICANDO CON “SELECTORES”
+
+EJERCICIO 1
+1 - Selecciona todos los elementos de tipo h2 y cambia su color a rojo
+2 - Modifica el precio del vuelo para que ahora sea $199.99
+4 - Modifica todos los títulos de las vacaciones (h2), su nuevo valor será "Sanlúcar de Barrameda".
+5 - Selecciona la lista de vacaciones cuyo id es #vacations y cambia su estilo.
+6 - Selecciona aquellos ítems que tenga la clase .america y cambia su estilo.
+
+<div id="vacations-wrapper">
+<h1>Vacation Packages</h1>
+<ul id="vacations">
+<li class="vacation america">
+<h2>San Francisco, California</h2>
+<span class="details">$700</span>
+</li>
+<li class="vacation america">
+<h2>Washington DC, District of Columbia</h2>
+<span class="details">$400</span>
+</li>
+<li class="vacation europe">
+<h2>London, England</h2>
+<span class="details">$1,100</span>
+</li>
+<li class="vacation asia">
+<h2>Shanghai, China</h2>
+<span class="details">$1,200</span>
+</li>
+</ul>
+<ul class="sorting">
+<li><a href="#">America</a></li>
+<li><a href="#">Europe</a></li>
+<li><a href="#">Asia</a></li>
+</ul>
+</div>
+
+EJERCICIO 2
+Teniendo la siguiente lista en tu html:
+<body>
+<p>Primero</p>
+<ul>
+<li><a href="#">Programación</a></li>
+<li><a href="modBD.html">Base de Datos</a></li>
+<li><a href="SImod.html">Sistemas Informáticos</a></li>
+<li><a href="mod-LM.html">Lenguajes de Marcas</a></li>
+<li><a>Formación y Orientación Laboral</a></li>
+<li></li>
+</ul>
+<p>Segundo</p>
+<ul>
+<li>DWESE
+<ul>
+<li>Desarrollo Web en Entorno Servidor</li>
+<li>10 horas</li>
+</ul>
+</li>
+<li>DWECL
+<ul>
+<li>Desarrollo Web en Entorno Cliente</li>
+<li>7 horas</li>
+</ul>
+</li>
+<li>DAW
+<ul>
+<li>Despliegue de Aplicaciones Web</li>
+<li>3 horas</li>
+</ul>
+</li>
+<li>DIWEB
+<ul>
+<li>Diseño de Interfaces Web</li>
+<li>6 horas</li>
+</ul>
+</li>
+<li>EIE
+<ul>
+<li>Entorno e Iniciativa Empresarial</li>
+<li>4 horas</li>
+</ul>
+</li>
+</ul>
+</body>
+
+Selecciona y aplica algún efecto o cambio de css:
+a - Selecciona todos los módulos de primero
+
+b - Selecciona el módulo Sistemas Informáticos
+c - Selecciona el módulo que va detrás de Sistemas Informáticos
+d - Selecciona los módulos que van detrás de Sistemas Informáticos
+e - Selecciona los módulos que tengan el atributo href
+f - Selecciona los módulos que no tengan el atributo href
+g - Selecciona aquellos módulos que contengan la cadena 'mod'
+h - Selecciona aquellos módulos que empiecen por la cadena 'mod'
+i - Selecciona aquellos módulos que terminen con la cadena '.html'
+j - Selecciona todas las horas de los módulos de segundo
+k - Selecciona los ítems vacíos y añade el contenido 'Nodo vacío'
+h - Selecciona los módulos DWESE, DAW y EIE
+EJERCICIO 3
+
+<body>
+<p>Primero</p>
+<ul>
+<li>Base de Datos</li>
+<li>Lenguajes de Marcas</li>
+<li></li>
+</ul>
+<p>Segundo</p>
+<ul>
+<li>DWESE
+<ul data-hours="10">
+<li class="azul" >Desarrollo Web en Entorno Servidor</li>
+</ul>
+</li>
+<li>DWECL
+<ul data-hours="7">
+<li class="azul">Desarrollo Web en Entorno Cliente</li>
+</ul>
+</li>
+<li>DAW
+<ul data-hours="3">
+<li class="azul">Despliegue de Aplicaciones Web</li>
+</ul>
+</li>
+<li>DIWEB
+<ul data-hours="6">
+<li class="azul">Diseño de Interfaces Web</li>
+</ul>
+</li>
+<li>EIE
+<ul data-hours="4">
+<li class="azul">Entorno e Iniciativa Empresarial</li>
+</ul>
+</li>
+</ul>
+</body>
+
+a. Asigna la clase borde a Primero y Segundo.
+b. Asigna la clase verde a las abreviaturas de cada módulo de segundo.
+c. Borra la clase borde.
+d. La clase borde se debe asignar o quitar según hagamos click sobre primero o segundo.
+e. Modifica ‘Primero’ por ‘Módulos de primero’.
+f. Modifica ‘Segundo’ por ‘Módulos de segundo’.
+g. Elimina los elementos de la las listas que estén vacíos.
+h. Añade el módulo de fol al final de la lista de primero. Realizar en ambos sentidos.
+i. Añade el módulo de programación al principio de la lista de primero. Realizar en ambos sentidos.
+j. Añade el módulo de sistemas informáticos detrás de base de datos.
+k. En la lista de los módulos de segundo, añade al final de cada uno de ellos la cantidad de horas
+semanales que tienen cuando se haga click sobre ellos. Parte del nombre de cada módulo y añade
+la información desde ul.
+l. Vacía la lista que contiene los módulos de segundo.
+m. Elimina la lista que contiene los módulos de primero.
