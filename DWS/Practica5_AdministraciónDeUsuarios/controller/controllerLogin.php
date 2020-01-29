@@ -25,14 +25,13 @@ for ($i=0; $i < sizeof($arrayUsuario); $i++) {
         ///echo "admin";
         }else{
             if($arrayUsuario[$i]['rol']== 'normal'){
-            header('Location:../view/vista.php');
-            echo "otro";
+                header('Location:../view/vista.php');
+                echo "otro";
+            }else{
+                header("Location:../index.php");
+                echo "no vale";
+            }
         }
-    else{
-        header("Location:../index.php");
-        echo "no vale";
     }
-}
-}
 }
 ?>
