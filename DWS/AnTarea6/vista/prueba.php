@@ -1,24 +1,25 @@
 <?php
+////////////////Vista y funcuinamiento del programa//////////////////////////
         include "../modelo/producto.php";
         $familias=Producto::getFamilias();
 
-        if (isset($_POST["enviar_Familia"])) {
+        if (isset($_POST["familia"])) {
 
-            $familia=Producto::getProductosFamilia($_POST["cod_familia"]);
-            $cadena = "Los codigos de los productos de la familia ".$_POST["cod_familia"]." son: ";
+            $familia=Producto::getProductosFamilia($_POST["codigoFamilia"]);
+            $cadena = "Códigos de los productos".$_POST["codigoFamilia"]." son: ";
             foreach ($familia as $key => $value) {
                 $cadena .= $value.", ";
             }
         }
-        if (isset($_POST["getStock"])) {
-            $stock=Producto::getStock($_POST["cod_producto"], $_POST["cod_tienda"]);
-            $cadena = "El stock del producto: ".$_POST["cod_producto"]." en la tienda: ".$_POST["cod_tienda"]." es: ".$stock." unidad.";
+        if (isset($_POST["stock"])) {
+            $stock=Producto::getStock($_POST["codigoProducto"], $_POST["codigoTienda"]);
+            $cadena = "Stock: ".$_POST["codigoProducto"]." en la tienda: ".$_POST["codigoTienda"]." es: ".$stock." unidad.";
 
         }
-        if (isset($_POST["enviarPVP"])) {
+        if (isset($_POST["pvp"])) {
 
-            $pvp=Producto::getPvP($_POST["cod_producto"]);
-            $cadena = "El PVP del producto: ".$_POST["cod_producto"]." es: ".$pvp."€.";
+            $pvp=Producto::getPvP($_POST["codigoProducto"]);
+            $cadena = "El PVP del producto: ".$_POST["codigoProducto"]." es: ".$pvp."€.";
         }
 ?>
 
@@ -28,38 +29,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Prueba</title>
 </head>
 <body>
     <?php
-    
-
         echo "Estas son todas las Familias :<br>";
         foreach ($familias as $key => $value) {
             echo $value."<br>";
-        }
-        //var_dump($familias);
-
-           
+        }    
     ?>
     <form action="prueba.php" method="post" name="getProductosFamilia">
-        <label>Numero de Familia: </label><input type="text" name="cod_familia">
-        <input type="submit" value="Enviar Familia" name="enviar_Familia">
+        <label>Familia: </label><input type="text" name="codigoFamilia">
+        <input type="submit" value="Enviar Familia" name="familia">
     </form>
-
-
     <form action="prueba.php" method="post" >
-        <label>Codigo de Producto: </label><input type="text" name="cod_producto">
-        <label>Codigo de Tienda: </label><input type="text" name="cod_tienda">
-        <input type="submit" value="Enviar Stock" name="getStock">
+        <label>Producto: </label><input type="text" name="codigoProducto">
+        <label>Tienda: </label><input type="text" name="codigoTienda">
+        <input type="submit" value="Enviar Stock" name="stock">
     </form>
-
-
     <form action="prueba.php" method="post" name="getPvP">
-        <label>Codigo de Producto: </label><input type="text" name="cod_producto">
-        <input type="submit" value="Enviar PVP" name="enviarPVP">
+        <label>Producto: </label><input type="text" name="codigoProducto">
+        <input type="submit" value="Enviar PVP" name="pvp">
     </form>
-
     <p>
     <?php
     if (isset($cadena)) {

@@ -1,5 +1,5 @@
 <?php
-    class Conexion extends PDO {
+    class Conn extends PDO {
       private $datos = "mysql:host=localhost;dbname=tarea6;charset=utf8mb4";
       private $usuario = "root";
       private $pass = ""; 
