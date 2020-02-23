@@ -87,5 +87,18 @@
             }
             return  $codigos;
         }
+
+        /**
+         * 
+         * Inserta movidas en la bdd
+         * @param string $cod
+         * @param string $nombre
+         */
+
+        public function insert($cod, $nombre){
+            $conexion = new Conn();
+            $insert = "INSERT INTO familia(cod, nombre) VALUES (\"".$cod."\", \"".$nombre."\")";
+            $conexion->exec($insert);
+        }
     }
     ?>
