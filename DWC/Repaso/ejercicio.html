@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var array =[];
+
+        do {
+            
+        var palabras = prompt("Ingresa palabras");
+            array.push(palabras);
+        } while (palabras!="");
+
+        function muestra1(arr){
+           return("Primera palabra: " + arr[0]+"<br>");
+        }
+
+        function muestraFinal(arr){
+            var i = arr.length-2;
+           return("Ultima palabra -- > " + arr[i] + "<br>");
+        }
+
+        function numerodepalabras(arr){
+           return(arr.length - 1 + " palabras hay  <br>");
+        }
+
+        function ordena(arr){
+            var n = ""
+            arr.sort();
+            for (let i = 0; i < arr.length; i++) {
+                n = n + array[i] + "<br>";     
+            }
+            return n;
+        }
+        
+
+        //Muestra el contenido de un array en ventana nueva y se va cerrando cada 4 segundos para abrir otra {}
+        function abrirVentanas(cad) {
+            var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+            var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+            var systemZoom = width / window.screen.availWidth;
+            var left = (width - 300) / 2 / systemZoom;
+            var top = (height - 400) / 2 / systemZoom;
+
+            let abrir = window.open('','Boom',"width=300,height=400,left="+left+",top="+top+"'");    
+            abrir.document.write('Nombre: '+cad);  
+            /////Para cerrarla
+            setTimeout(function(){
+                abrir.close()
+            } , 4000);        
+        }
+
+        function mostrar(array, veces=1) { ///Veces se modificara para mostrar a partir de
+            if (veces<array.length){
+                console.log('entra');
+                abrirVentanas(array[veces]);
+                setTimeout(function(){
+                    mostrar(array, veces+1)
+                }, 4000); 
+            }
+        }
+
+        var abrir =  window.open('','Boom',"width=300,height=400", "left=300, top=-300");    
+     /*   abrir.document.write(muestra1(array));
+        abrir.document.write(muestraFinal(array));
+        abrir.document.write(numerodepalabras(array));
+        abrir.document.write(ordena(array));*/
+
+        var ordenada = array.sort();
+    </script>
+</body>
+</html>

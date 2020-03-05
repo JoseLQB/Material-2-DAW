@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Persona.js"></script>
+    <script src="Paciente.js"></script>
+    <script src="Medico.js"></script>
+    <script src="Cita.js"></script>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <script>
+        
+        var medico1 = new Medico("Jose", "QB", "23698745C", "4312");
+        var medico2 = new Medico("Maria", "VC", "12399998X", "0123");
+        
+        var paciente1 = new Paciente("Pedro", "Garrido", "22234511C", "123");
+        var paciente2 = new Paciente("Julio", "Peres", "00403219S", "256");
+        var paciente3 = new Paciente("Juan", "  Ramos", "56344321A", "980");
+
+
+        //Cita1
+        var fecha1 = new Date();
+        fecha1.setMonth(11, 3);
+        var cita1 = new Cita(fecha1, medico1, paciente1);
+        //Cita2
+        var fecha2 = new Date();
+        fecha2.setMonth(9, 11);
+        var cita2 = new Cita(fecha2, medico2, paciente2);
+
+        citas = [cita1, cita2];
+        ///Ver citas
+        verTodaCita(citas);
+        ///Introducir nueva cita
+        document.write("<hr>")
+        var fecha3 = new Date();
+        fecha3.setMonth(3, 6);
+        var cita3 = new Cita(fecha3, medico2, paciente3);
+        nuevaCita(cita3, citas);
+        verTodaCita(citas);
+        ///Eliminar una cita
+        document.write("<hr>")
+        eliminarCita(cita2, citas);
+        verTodaCita(citas);
+        ///Busca cita
+        document.write("<hr>")
+        buscaCita("Juan", citas);
+        document.write("<hr>")
+        ///Ordena citas por fecha
+        verTodaCita(citas);
+        ordenaCitas(citas);///Se ordena la cita
+        verTodaCita(citas);///Se muestran ordenadas
+        document.write("<hr>");
+        eliminaNombre("Pedro", citas);
+        verTodaCita(citas);
+        
+        for (let i = 0; i < citas.length; i++) {
+            document.write(citas[i].Paciente.nombre+ "<br>")
+        }
+
+    </script>
+</body>
+</html>
